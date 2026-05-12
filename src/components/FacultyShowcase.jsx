@@ -49,6 +49,25 @@ const UserBadgeIcon = () => (
   </svg>
 );
 
+const ProfessorIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 4L20 8.5L12 13L4 8.5L12 4Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M7 10.2V14.4C7 15.5 9.2 17.3 12 17.3C14.8 17.3 17 15.5 17 14.4V10.2" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M20 8.5V14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+  </svg>
+);
+
+const BuildingIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 20V6.8C5 6.1 5.6 5.5 6.3 5.5H17.7C18.4 5.5 19 6.1 19 6.8V20" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M9 9H10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M14 9H15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M9 13H10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M14 13H15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M11 20V16.5C11 15.9 11.4 15.5 12 15.5C12.6 15.5 13 15.9 13 16.5V20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+  </svg>
+);
+
 const tabs = [
   { label: 'Top Faculties', icon: <PeopleIcon />, active: true },
   { label: 'Awards & Achievements', icon: <TrophyIcon />, active: false },
@@ -62,6 +81,7 @@ const facultyCards = [
     school: 'Sharda School of Humanities & Social Sciences',
     image: facultyBg,
     tone: 'cyan',
+    badgeIcon: <ProfessorIcon />,
   },
   {
     name: 'Prof. Prem Kumar Malhotra',
@@ -69,6 +89,7 @@ const facultyCards = [
     school: 'Sharda School of Law',
     image: aboutBg,
     tone: 'gold',
+    badgeIcon: <ProfessorIcon />,
   },
   {
     name: 'Prof. (Dr.) Debasis Mallik',
@@ -76,6 +97,7 @@ const facultyCards = [
     school: 'Sharda School of Business Studies',
     image: institutionsBg,
     tone: 'blue',
+    badgeIcon: <ProfessorIcon />,
   },
   {
     name: 'Prof. (Dr.) Hrishikesh Dave',
@@ -83,6 +105,7 @@ const facultyCards = [
     school: 'Sharda School of Law',
     image: campusBg,
     tone: 'violet',
+    badgeIcon: <ProfessorIcon />,
   },
 ];
 
@@ -163,18 +186,27 @@ export default function FacultyShowcase() {
                     <img src={faculty.image} alt={faculty.name} className="faculty-showcase__portrait" loading="lazy" />
                   </div>
                   <span className="faculty-showcase__badge">
-                    <UserBadgeIcon />
+                    {faculty.badgeIcon}
                   </span>
                   <h3 className="faculty-showcase__name">{faculty.name}</h3>
                   <span className="faculty-showcase__line" />
                   <div className={`faculty-showcase__info faculty-showcase__info--${faculty.tone}`}>
-                    <div className="faculty-showcase__info-row">
-                      <span className="faculty-showcase__info-icon">
-                        <UserBadgeIcon />
-                      </span>
-                      <div>
-                        <strong>{faculty.role}</strong>
-                        <span>{faculty.school}</span>
+                    <div className="faculty-showcase__info-stack">
+                      <div className="faculty-showcase__info-row">
+                        <span className="faculty-showcase__info-icon">
+                          <UserBadgeIcon />
+                        </span>
+                        <div>
+                          <strong>{faculty.role}</strong>
+                        </div>
+                      </div>
+                      <div className="faculty-showcase__info-row">
+                        <span className="faculty-showcase__info-icon">
+                          <BuildingIcon />
+                        </span>
+                        <div>
+                          <span>{faculty.school}</span>
+                        </div>
                       </div>
                     </div>
                   </div>

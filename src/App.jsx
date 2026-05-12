@@ -1,30 +1,29 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import StatsBar from './components/StatsBar'
-import Programs from './components/Programs'
-import ProgramsSpotlight from './components/ProgramsSpotlight'
-import PlacementsShowcase from './components/PlacementsShowcase'
-import FacultyShowcase from './components/FacultyShowcase'
-import FullSections from './components/FullSections'
-import HappeningsShowcase from './components/HappeningsShowcase'
+import Home from './pages/Home'
+import HistoryOfSeg from './pages/HistoryOfSeg'
+import ChairmansMessage from './pages/ChairmansMessage'
+import MissionVision from './pages/MissionVision'
+import WhyJoinSeg from './pages/WhyJoinSeg'
+import ContactUs from './pages/ContactUs'
 import Footer from './components/Footer'
 
 function App() {
   return (
-    <>
+    <Router>
       <TopBar />
       <Navbar />
-      <Hero />
-      <StatsBar />
-      <Programs />
-      <ProgramsSpotlight />
-      <PlacementsShowcase />
-      <FacultyShowcase />
-      <FullSections />
-      <HappeningsShowcase />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/history-of-seg" element={<HistoryOfSeg />} />
+        <Route path="/chairmans-message" element={<ChairmansMessage />} />
+        <Route path="/mission-vision" element={<MissionVision />} />
+        <Route path="/why-join-seg" element={<WhyJoinSeg />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   )
 }
 

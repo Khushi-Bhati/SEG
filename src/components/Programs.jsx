@@ -5,7 +5,7 @@ import program4 from '../assets/images/program4.png';
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -19,17 +19,18 @@ const programs = [
 export default function Programs() {
   return (
     <section className="programs" id="programs">
-      <div className="section-header">
-        <div className="section-header__title-wrap">
-          <span className="section-header__label">Our Programs</span>
-          <h2 className="section-header__title">Explore Our Programs</h2>
+      <div className="programs__shell">
+        <div className="section-header">
+          <div className="section-header__title-wrap">
+
+          </div>
+          <button className="btn btn--primary" id="view-all-programs-btn">
+            View All Programs
+            <span className="btn__arrow">
+              <ArrowRight />
+            </span>
+          </button>
         </div>
-        <button className="btn btn--primary" id="view-all-programs-btn">
-          View All Programs
-          <span className="btn__arrow">
-            <ArrowRight />
-          </span>
-        </button>
       </div>
 
       <div className="programs__grid">

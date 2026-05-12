@@ -95,17 +95,22 @@ const placementStats = [
   { label: 'Top Industry Roles', value: 'Top', icon: <MedalIcon />, tone: 'violet' },
 ];
 
+const createLogo = (text, background = '#ffffff', color = '#162341') => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="56"><rect width="100%" height="100%" rx="18" fill="${background}"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="${color}">${text}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+};
+
 const hiringPartners = [
-  'cognizant',
-  'accenture',
-  'AON',
-  'asian paints',
-  'CMC Limited',
-  'Google',
-  'HDFC BANK',
-  'Microsoft',
-  'NIIT',
-  'TCS',
+  { name: 'Cognizant', logo: createLogo('Cognizant', '#ffffff', '#0f4b8f') },
+  { name: 'Accenture', logo: createLogo('Accenture', '#ffffff', '#000000') },
+  { name: 'AON', logo: createLogo('AON', '#ffffff', '#001f5b') },
+  { name: 'Asian Paints', logo: createLogo('Asian Paints', '#ffffff', '#d8451b') },
+  { name: 'CMC Limited', logo: createLogo('CMC Limited', '#ffffff', '#0d4f8b') },
+  { name: 'Google', logo: createLogo('Google', '#ffffff', '#0f4b8f') },
+  { name: 'HDFC BANK', logo: createLogo('HDFC BANK', '#ffffff', '#002b5c') },
+  { name: 'Microsoft', logo: createLogo('Microsoft', '#ffffff', '#737373') },
+  { name: 'NIIT', logo: createLogo('NIIT', '#ffffff', '#d21f3c') },
+  { name: 'TCS', logo: createLogo('TCS', '#ffffff', '#f15a22') },
 ];
 
 function PlacementCard({ card }) {
@@ -220,9 +225,14 @@ export default function PlacementsShowcase() {
 
           <div className="placements-showcase__partners-rail">
             {hiringPartners.map((partner) => (
-              <span className="placements-showcase__partner-chip" key={partner}>
-                {partner}
-              </span>
+              <div className="placements-showcase__partner-item" key={partner.name}>
+                <img
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  className="placements-showcase__partner-logo"
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </section>

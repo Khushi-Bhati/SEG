@@ -9,13 +9,16 @@ export default function TopBar() {
   return (
     <div className="top-bar">
       <div className="top-bar__left">
-        <a href="#" className="top-bar__link">Why SEG?</a>
-        <a href="#" className="top-bar__link">Career</a>
-        <a href="#" className="top-bar__link">Alumini</a>
+        <div className="top-bar__primary">
+          <a href="#" className="top-bar__link">Why SEG?</a>
+          <span className="top-bar__divider top-bar__divider--visible" />
+          <a href="#" className="top-bar__link">Career</a>
+          <span className="top-bar__divider top-bar__divider--visible" />
+          <a href="#" className="top-bar__link">Alumini</a>
+        </div>
         <div className="top-bar__utility">
-          <span className="top-bar__divider" />
           <span className="top-bar__link">Toll Free no: 1800-180-7686</span>
-          <span className="top-bar__divider" />
+          <span className="top-bar__divider top-bar__divider--visible" />
           <span className="top-bar__link top-bar__email">
             <MailIcon />
             <span>: For jobs ( send Cv ) ~hr @seglko.org</span>

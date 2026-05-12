@@ -1,0 +1,161 @@
+/* ===== CONTACT US PAGE ===== */
+.cu-page { background: #f0f4ff; width: 100%; overflow: hidden; font-family: inherit; }
+
+/* ── Hero ── */
+.cu-hero {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 60px 48px 40px;
+  width: 100%;
+}
+.cu-hero__left { flex: 0 0 340px; }
+.cu-hero__title { font-size: clamp(2rem, 3.5vw, 44px); font-weight: 800; color: #0f172a; line-height: 1.15; margin-bottom: 16px; }
+.cu-hero__title span { color: #2563eb; }
+.cu-hero__sub { font-size: 15px; line-height: 1.6; color: #475569; margin-bottom: 28px; max-width: 320px; }
+.cu-hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+.cu-hero__secure { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #64748b; }
+.cu-hero__secure svg { width: 16px; height: 16px; color: #2563eb; }
+
+.cu-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none; border: 2px solid #2563eb; transition: all 0.2s; }
+.cu-btn svg { width: 16px; height: 16px; }
+.cu-btn--solid { background: #2563eb; color: #fff; }
+.cu-btn--solid:hover { background: #1d4ed8; }
+.cu-btn--outline { background: #fff; color: #2563eb; }
+.cu-btn--outline:hover { background: #eff6ff; }
+
+.cu-hero__center { flex: 1; display: flex; justify-content: center; }
+.cu-hero__center img { width: 100%; max-width: 420px; height: auto; object-fit: contain; }
+
+.cu-hero__right { flex: 0 0 220px; display: flex; flex-direction: column; gap: 14px; }
+.cu-feature { display: flex; align-items: flex-start; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+.cu-feature__icon { font-size: 22px; flex-shrink: 0; }
+.cu-feature__title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+.cu-feature__desc { font-size: 12px; color: #64748b; line-height: 1.4; }
+
+/* ── Quick Bar ── */
+.cu-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #fff;
+  border-top: 1px solid #e8eef6;
+  border-bottom: 1px solid #e8eef6;
+}
+.cu-bar__item { display: flex; align-items: center; gap: 14px; padding: 22px 28px; text-decoration: none; color: inherit; border-right: 1px solid #e8eef6; transition: background 0.2s; }
+.cu-bar__item:last-child { border-right: none; }
+.cu-bar__item:hover { background: #f8faff; }
+.cu-bar__icon { width: 48px; height: 48px; border-radius: 50%; background: #2563eb; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.cu-bar__info { flex: 1; min-width: 0; }
+.cu-bar__label { font-size: 14px; font-weight: 700; color: #0f172a; }
+.cu-bar__detail { font-size: 13px; color: #64748b; margin-top: 2px; }
+.cu-bar__arrow { font-size: 22px; color: #94a3b8; }
+
+/* ── Main (Form + Campus) ── */
+.cu-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 48px;
+  background: #f0f4ff;
+}
+
+/* Form Card */
+.cu-form-card { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.cu-form-card h2 { font-size: 24px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.cu-form-card__line { width: 40px; height: 3px; background: #2563eb; border-radius: 4px; margin-bottom: 28px; }
+
+.cu-form { display: flex; flex-direction: column; gap: 14px; }
+.cu-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.cu-input { display: flex; align-items: center; gap: 10px; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 0 14px; background: #fff; transition: border-color 0.2s; }
+.cu-input:focus-within { border-color: #2563eb; }
+.cu-input svg { width: 18px; height: 18px; color: #94a3b8; flex-shrink: 0; }
+.cu-input input, .cu-input select, .cu-input textarea { flex: 1; border: none; outline: none; font-size: 14px; color: #374151; background: transparent; padding: 13px 0; font-family: inherit; }
+.cu-input select { cursor: pointer; }
+.cu-input--full { grid-column: 1 / -1; }
+.cu-input--textarea { align-items: flex-start; padding-top: 12px; }
+.cu-input--textarea svg { margin-top: 2px; }
+
+.cu-submit { display: flex; align-items: center; justify-content: center; gap: 10px; background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 15px; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.cu-submit svg { width: 18px; height: 18px; }
+.cu-submit:hover { background: #1d4ed8; }
+
+.cu-form__privacy { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #64748b; justify-content: center; }
+.cu-form__privacy svg { width: 14px; height: 14px; }
+
+/* Campus Card */
+.cu-campus { display: flex; flex-direction: column; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.cu-campus__img-wrap { position: relative; }
+.cu-campus__img-wrap img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.cu-campus__img-label { position: absolute; top: 16px; left: 16px; background: rgba(15,23,42,0.7); color: #fff; font-size: 16px; font-weight: 700; padding: 6px 14px; border-radius: 6px; }
+.cu-campus__info { background: #fff; padding: 20px; }
+.cu-campus__office { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+.cu-campus__office-icon { font-size: 28px; flex-shrink: 0; }
+.cu-campus__office-title { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.cu-campus__office-addr { font-size: 13px; color: #64748b; line-height: 1.5; }
+.cu-campus__details { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 14px; border-top: 1px solid #f1f5f9; }
+.cu-campus__detail { display: flex; align-items: flex-start; gap: 10px; }
+.cu-campus__detail svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
+.cu-campus__detail-label { font-size: 12px; color: #64748b; margin-bottom: 2px; }
+.cu-campus__detail-val { font-size: 13px; font-weight: 600; color: #0f172a; }
+.cu-map { position: relative; flex: 1; min-height: 200px; }
+.cu-map iframe { width: 100%; height: 100%; min-height: 200px; border: none; display: block; }
+.cu-map__open { position: absolute; top: 10px; right: 10px; z-index: 2; background: #fff; color: #2563eb; font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+/* ── FAQ ── */
+.cu-faq { background: #fff; padding: 70px 48px; }
+.cu-faq__title { text-align: center; font-size: 32px; font-weight: 700; color: #0f172a; margin-bottom: 10px; }
+.cu-faq__line { width: 50px; height: 3px; background: #2563eb; border-radius: 4px; margin: 0 auto 48px; }
+.cu-faq__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 48px; }
+.cu-faq__item { border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 18px 20px; cursor: pointer; background: #fff; transition: border-color 0.2s, box-shadow 0.2s; }
+.cu-faq__item--open { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.08); }
+.cu-faq__q { display: flex; align-items: center; gap: 12px; }
+.cu-faq__q-icon { font-size: 20px; flex-shrink: 0; }
+.cu-faq__q span:nth-child(2) { flex: 1; font-size: 14px; font-weight: 600; color: #0f172a; }
+.cu-faq__chevron { font-size: 11px; color: #94a3b8; }
+.cu-faq__a { margin-top: 12px; padding-top: 12px; border-top: 1px solid #f1f5f9; font-size: 14px; line-height: 1.65; color: #475569; padding-left: 32px; }
+
+/* Trust badges */
+.cu-trust { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 36px; }
+.cu-trust__item { display: flex; align-items: flex-start; gap: 14px; border-radius: 12px; padding: 20px; }
+.cu-trust__icon { font-size: 26px; flex-shrink: 0; }
+.cu-trust__title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.cu-trust__desc { font-size: 13px; color: #64748b; line-height: 1.4; }
+
+/* CTA Banner */
+.cu-cta { display: flex; align-items: center; justify-content: space-between; background: #f8faff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 28px 36px; gap: 24px; flex-wrap: wrap; }
+.cu-cta__left { display: flex; align-items: center; gap: 18px; }
+.cu-cta__avatar { font-size: 48px; }
+.cu-cta__heading { font-size: 20px; font-weight: 700; color: #0f172a; }
+.cu-cta__sub { font-size: 14px; color: #64748b; margin-top: 4px; }
+.cu-cta__btns { display: flex; gap: 14px; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .cu-hero { flex-direction: column; padding: 40px 24px 32px; text-align: center; }
+  .cu-hero__left { flex: none; }
+  .cu-hero__actions { justify-content: center; }
+  .cu-hero__secure { justify-content: center; }
+  .cu-hero__right { flex: none; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .cu-bar { grid-template-columns: repeat(2, 1fr); }
+  .cu-bar__item:nth-child(2) { border-right: none; }
+  .cu-main { grid-template-columns: 1fr; padding: 32px 24px; }
+  .cu-trust { grid-template-columns: repeat(2, 1fr); }
+  .cu-faq { padding: 50px 24px; }
+}
+
+@media (max-width: 640px) {
+  .cu-hero { padding: 30px 16px; }
+  .cu-hero__right { grid-template-columns: 1fr; }
+  .cu-bar { grid-template-columns: 1fr; }
+  .cu-bar__item { border-right: none; border-bottom: 1px solid #e8eef6; }
+  .cu-form__row { grid-template-columns: 1fr; }
+  .cu-faq__grid { grid-template-columns: 1fr; }
+  .cu-trust { grid-template-columns: 1fr 1fr; }
+  .cu-cta { flex-direction: column; text-align: center; }
+  .cu-cta__left { flex-direction: column; text-align: center; }
+  .cu-cta__btns { width: 100%; justify-content: center; }
+  .cu-main { padding: 24px 14px; }
+  .cu-faq { padding: 40px 14px; }
+}

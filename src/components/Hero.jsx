@@ -15,8 +15,9 @@ export default function Hero() {
 
       <div className="hero__content">
         <h1 className="hero__heading animate-fade-in">
-          EMPOWERING FUTURE LEADERS,{' '}
-          UNLOCKING <span>POTENTIAL</span>
+          <span className="hero__heading-line">EMPOWERING FUTURE</span>
+          <span className="hero__heading-line">LEADERS, UNLOCKING</span>
+          <span className="hero__heading-line hero__heading-line--accent">POTENTIAL</span>
         </h1>
         <p className="hero__subtext animate-fade-in" style={{ animationDelay: '0.2s' }}>
           At Saroj Educational Group, we nurture talent, encourage innovation, and empower students to achieve excellence in every sphere.
