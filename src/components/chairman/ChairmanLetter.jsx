@@ -1,4 +1,4 @@
-import facultyBgImg from '../../assets/images/faculty-bg.png'
+import facultyBgImg from '../../assets/images/chairman.jpeg'
 
 const messagePoints = [
   'Education lays the foundation for building a better tomorrow and shaping ground for future leaders. Since our inception, SEG has remained steadfast in its mission to impart quality education, develop practical skills, and instill a sense of responsibility in our students.',

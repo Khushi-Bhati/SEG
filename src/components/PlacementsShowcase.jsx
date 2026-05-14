@@ -181,7 +181,7 @@ export default function PlacementsShowcase() {
           <section className="placements-showcase__stats-card">
             <div
               className="placements-showcase__stats-hero"
-              style={{ backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.94), rgba(255,255,255,0.9)), url(${placementsBg})` }}
+              style={{ backgroundImage: `linear-gradient(135deg, rgba(255,255,255,0.94), rgba(255,255,255,0.9)))` }}
             >
               <div className="placements-showcase__stats-copy">
                 <h3>

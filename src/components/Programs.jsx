@@ -24,12 +24,7 @@ export default function Programs() {
           <div className="section-header__title-wrap">
 
           </div>
-          <button className="btn btn--primary" id="view-all-programs-btn">
-            View All Programs
-            <span className="btn__arrow">
-              <ArrowRight />
-            </span>
-          </button>
+
         </div>
       </div>
 
@@ -40,9 +35,7 @@ export default function Programs() {
             key={i}
           >
             <img src={program.image} alt={program.title} />
-            <div className="programs__card-overlay">
-              <span className="programs__card-title">{program.title}</span>
-            </div>
+
           </div>
         ))}
       </div>

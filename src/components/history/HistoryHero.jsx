@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import institutionsBg from '../../assets/images/institutions-bg.png';
+import institutionsBg from '../../assets/images/seg.jpeg';
 
 const HistoryHero = () => {
   return (
@@ -44,7 +44,7 @@ const HistoryHero = () => {
           </div>
           <div className="history-stats-bar__info">
             <span className="history-stats-bar__value">27+</span>
-            <span className="history-stats-bar__label">YEARS OF<br/>EXCELLENCE</span>
+            <span className="history-stats-bar__label">YEARS OF<br />EXCELLENCE</span>
           </div>
         </div>
 
@@ -59,7 +59,7 @@ const HistoryHero = () => {
           </div>
           <div className="history-stats-bar__info">
             <span className="history-stats-bar__value">25K+</span>
-            <span className="history-stats-bar__label">HAPPY<br/>STUDENTS</span>
+            <span className="history-stats-bar__label">HAPPY<br />STUDENTS</span>
           </div>
         </div>
 
@@ -84,7 +84,7 @@ const HistoryHero = () => {
           </div>
           <div className="history-stats-bar__info">
             <span className="history-stats-bar__value">6+</span>
-            <span className="history-stats-bar__label">INSTITUTIONS<br/>ACROSS INDIA</span>
+            <span className="history-stats-bar__label">INSTITUTIONS<br />ACROSS INDIA</span>
           </div>
         </div>
 
@@ -100,7 +100,7 @@ const HistoryHero = () => {
           </div>
           <div className="history-stats-bar__info">
             <span className="history-stats-bar__value">100+</span>
-            <span className="history-stats-bar__label">AWARDS &<br/>RECOGNITIONS</span>
+            <span className="history-stats-bar__label">AWARDS &<br />RECOGNITIONS</span>
           </div>
         </div>
       </div>

@@ -170,7 +170,7 @@ export default function ProgramsSpotlight() {
       <div className="programs-spotlight__shell">
         <div className="programs-spotlight__hero">
           <div className="programs-spotlight__intro">
-            <span className="programs-spotlight__eyebrow">Our Programs</span>
+
             <span className="programs-spotlight__accent-line" />
             <h2 className="programs-spotlight__title">
               <span className="programs-spotlight__title-line programs-spotlight__title-line--lead">

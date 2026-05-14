@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import aboutBgImg from '../assets/images/about-bg.png';
+import aboutBgImg from '../assets/images/seg.jpeg';
 import logoImg from '../assets/images/logo.png';
 
 const navItems = [
@@ -12,8 +12,8 @@ const navItems = [
   { label: 'R & D', hasDropdown: true },
   { label: 'Our Institutions', hasDropdown: true },
   { label: 'Student Zone', hasDropdown: true },
-  { label: 'Placements', hasDropdown: true },
-  { label: 'Explore more', hasDropdown: true },
+  { label: 'Placements', hasDropdown: false, path: '/placements' },
+  { label: 'Explore more', hasDropdown: false, path: '/explore-more' },
   { label: 'Contact us', hasDropdown: false },
 ];
 
@@ -58,31 +58,37 @@ const programsMenuItems = [
     description: 'Our M.Tech program offers advanced skills in engineering, with opportunities for research and innovation.',
     accent: true,
     icon: 'gear',
+    path: '/programs/mtech',
   },
   {
     title: 'Bachelor of Business Administration',
     description: 'Our BBA program is designed to equip students with the skills and knowledge needed for leadership in business.',
     icon: 'business',
+    path: '/programs/bba',
   },
   {
     title: 'Master of Business Administration',
     description: 'We offer an MBA program designed to develop leadership and strategic management skills for global business.',
     icon: 'people',
+    path: '/programs/mba',
   },
   {
     title: 'Bachelor in Computer Application',
     description: 'Our BCA program is focused on programming, system management, and application development in the IT industry.',
     icon: 'monitor',
+    path: '/programs/bca',
   },
   {
     title: 'Masters in Computer Applications',
     description: 'Our MCA program equips students with expertise in software development, IT, and systems management.',
     icon: 'computer',
+    path: '/programs/mca',
   },
   {
     title: 'B.Pharm',
     description: 'Our B.Pharm program offers a comprehensive education in pharmaceutical sciences, preparing students for diverse roles.',
     icon: 'capsule',
+    path: '/programs/bpharm',
   },
 ];
 
@@ -107,6 +113,139 @@ const programsFeatureCards = [
     description: 'Our diploma programs offer practical training and industry-relevant skills, ensuring career readiness.',
     icon: 'certificate',
   },
+];
+
+const admissionMenuItems = [
+  {
+    title: 'Admission Process',
+    description: 'Follow our seamless process to secure your seat.',
+    accent: true,
+    icon: 'expand',
+    path: '/admission-process',
+  },
+  {
+    title: 'Eligibility Criteria',
+    description: 'Our eligibility criteria are designed to help you understand the requirements for a successful application.',
+    icon: 'user-check',
+    path: '/eligibility-criteria',
+  },
+  {
+    title: 'Fee Structure',
+    description: 'Get all the information you need about our fee structure to make an informed decision about your studies.',
+    icon: 'document',
+    path: '/fee-structure',
+  },
+  {
+    title: 'Management Admission Quota',
+    description: 'Apply through our Management Quota for flexible admission and clear fee details.',
+    icon: 'document',
+    path: '/management-quota',
+  },
+];
+
+const admissionHighlights = [
+  { value: '4', title: 'Easy Steps', desc: 'Simple admission process', icon: 'expand' },
+  { value: '100%', title: 'Transparent', desc: 'Clear & honest process', icon: 'user-check' },
+  { value: '24/7', title: 'Support', desc: 'We\'re here to help you', icon: 'document' },
+  { value: 'Join', title: 'SEG Family', desc: 'Shape your future with us', icon: 'cap' },
+];
+
+const institutionsData = [
+  {
+    title: 'Shivdan Singh Institute of Technology and Management',
+    description: 'Approved by AICTE and affiliated to AKTU, Lucknow, College Code: 007',
+    icon: 'institution',
+    url: 'https://ssitm.in/',
+  },
+  {
+    title: 'Saroj Institute of Technology and Management',
+    description: 'Approved by AICTE and affiliated to AKTU, Lucknow, College Code: 123',
+    icon: 'building',
+    url: 'https://sitmlko.org/',
+  },
+  {
+    title: 'Lucknow Institute of Pharmacy',
+    description: 'Approved by Pharmacy Council of India (PCI) and affiliated to AKTU',
+    icon: 'medical',
+    url: 'https://seglko.org/lip/',
+  },
+  {
+    title: 'Saroj College of Pharmacy',
+    description: 'Approved by Pharmacy Council of India and affiliated to AKTU, Lucknow, College Code: 2031',
+    icon: 'capsule',
+    url: 'https://seglko.org/scp/',
+  },
+  {
+    title: 'Saroj College of Engineering and Polytechnic',
+    description: 'Approved by AICTE and affiliated to AKTU',
+    icon: 'gear',
+    url: 'https://seglko.org/scep/',
+  },
+  {
+    title: 'Saroj College of Law',
+    description: 'Affiliated to Lucknow University',
+    icon: 'document',
+    url: 'https://seglko.org/scl/',
+  },
+];
+
+const studentZoneItems = [
+  {
+    title: 'Student Notice',
+    description: 'Important updates and announcements for SEG students-stay informed and engaged!',
+    icon: 'message',
+    path: '/student-notice',
+  },
+];
+
+const rdItems = [
+  {
+    title: 'R & D Projects',
+    description: 'Explore our innovative R&D projects, driving cutting-edge research and technological advancements.',
+    icon: 'bulb',
+    path: '/rd-projects',
+  },
+  {
+    title: 'Technologies Developed',
+    description: "We take pride in the technologies we've developed, revolutionizing industries and enhancing everyday life.",
+    icon: 'chip',
+    path: '/technologies-developed',
+  },
+  {
+    title: 'Award Winning Projects',
+    description: 'Discover the groundbreaking work behind our award-winning projects, setting new standards in the field.',
+    icon: 'award',
+    path: '/award-winning-projects',
+  },
+  {
+    title: 'Research & Publications',
+    description: 'Explore our extensive research and publications, contributing to the advancement of knowledge and industry practices.',
+    icon: 'book',
+    path: '/research-publications',
+  },
+];
+
+const rdMetrics = [
+  { value: '50+', label: 'R&D Projects', sub: 'Innovative ideas turning into reality', icon: 'bulb' },
+  { value: '30+', label: 'Technologies', sub: 'Developed for a better tomorrow', icon: 'chip' },
+  { value: '15+', label: 'Awards Won', sub: 'Recognized for excellence', icon: 'award' },
+  { value: '100+', label: 'Researchers', sub: 'Dedicated minds driving progress', icon: 'people' },
+];
+
+const rdBottomFeatures = [
+  { title: 'Impactful Research', desc: 'Solutions that address real-world challenges.', icon: 'shield' },
+  { title: 'Technology Driven', desc: 'Innovations that power industries.', icon: 'people-circle' },
+  { title: 'Quality & Ethics', desc: 'Upholding the highest standards in R&D.', icon: 'document-text' },
+  { title: 'Funded Initiatives', desc: 'Supported by leading govt. organizations.', icon: 'currency' },
+  { title: 'Collaborative Approach', desc: 'Working together for greater impact.', icon: 'people' },
+];
+
+const admissionFeatures = [
+  { title: 'Simple Process', desc: 'Hassle-free admission experience', icon: 'shield' },
+  { title: 'Guided Support', desc: 'Assistance at every step', icon: 'people' },
+  { title: 'Transparent Criteria', desc: 'Clear requirements and guidelines', icon: 'document' },
+  { title: 'Fee Clarity', desc: 'Detailed fee structure and policies', icon: 'rupee' },
+  { title: 'Merit & Fairness', desc: 'Merit-based and fair evaluation', icon: 'people' },
 ];
 
 const DropdownArrow = () => (
@@ -292,6 +431,105 @@ const IconTile = ({ type }) => {
           <path d="M15.3 18.8L14.5 21L16.5 20L18.5 21L17.7 18.8" {...commonProps} />
         </svg>
       );
+    case 'document':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" {...commonProps} />
+          <path d="M14 2V8H20" {...commonProps} />
+          <path d="M16 13H8" {...commonProps} />
+          <path d="M16 17H8" {...commonProps} />
+          <path d="M10 9H8" {...commonProps} />
+        </svg>
+      );
+    case 'expand':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 3H21V9" {...commonProps} />
+          <path d="M9 21H3V15" {...commonProps} />
+          <path d="M21 3L14 10" {...commonProps} />
+          <path d="M3 21L10 14" {...commonProps} />
+        </svg>
+      );
+    case 'user-check':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 21V19C16 17.9 15.6 16.9 14.8 16.2C14.1 15.4 13.1 15 12 15H5C3.9 15 2.9 15.4 2.2 16.2C1.4 16.9 1 17.9 1 19V21" {...commonProps} />
+          <circle cx="8.5" cy="7" r="4" {...commonProps} />
+          <path d="M17 11L19 13L23 9" {...commonProps} />
+        </svg>
+      );
+    case 'rupee':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 3H18" {...commonProps} />
+          <path d="M6 8H18" {...commonProps} />
+          <path d="M14.5 21L6 13H9C15.5 13 15.5 3 9 3" {...commonProps} />
+        </svg>
+      );
+    case 'bulb':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3C8.7 3 6 5.7 6 9C6 11.3 7.3 13.3 9 14.6V17C9 17.6 9.4 18 10 18H14C14.6 18 15 17.6 15 17V14.6C16.7 13.3 18 11.3 18 9C18 5.7 15.3 3 12 3Z" {...commonProps} />
+          <path d="M10 21H14" {...commonProps} />
+          <path d="M10 18.5V21" {...commonProps} />
+          <path d="M14 18.5V21" {...commonProps} />
+        </svg>
+      );
+    case 'chip':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7" y="7" width="10" height="10" rx="2" {...commonProps} />
+          <path d="M9 7V4" {...commonProps} />
+          <path d="M12 7V4" {...commonProps} />
+          <path d="M15 7V4" {...commonProps} />
+          <path d="M9 20V17" {...commonProps} />
+          <path d="M12 20V17" {...commonProps} />
+          <path d="M15 20V17" {...commonProps} />
+          <path d="M7 9H4" {...commonProps} />
+          <path d="M7 12H4" {...commonProps} />
+          <path d="M7 15H4" {...commonProps} />
+          <path d="M20 9H17" {...commonProps} />
+          <path d="M20 12H17" {...commonProps} />
+          <path d="M20 15H17" {...commonProps} />
+        </svg>
+      );
+    case 'book':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H15C16.1 4 17 4.9 17 6V20H4V4Z" {...commonProps} />
+          <path d="M17 6H19C20.1 6 21 6.9 21 8V20H17" {...commonProps} />
+          <path d="M8 9H13" {...commonProps} />
+          <path d="M8 13H13" {...commonProps} />
+        </svg>
+      );
+    case 'people-circle':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" {...commonProps} />
+          <circle cx="12" cy="10" r="3" {...commonProps} />
+          <path d="M7 19C7.8 16.5 9.7 15 12 15C14.3 15 16.2 16.5 17 19" {...commonProps} />
+        </svg>
+      );
+    case 'document-text':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" {...commonProps} />
+          <path d="M14 2V8H20" {...commonProps} />
+          <path d="M16 13H8" {...commonProps} />
+          <path d="M16 17H8" {...commonProps} />
+          <path d="M10 9H8" {...commonProps} />
+        </svg>
+      );
+    case 'currency':
+      return (
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" {...commonProps} />
+          <path d="M9 8H15" {...commonProps} />
+          <path d="M9 12H15" {...commonProps} />
+          <path d="M9 12H11C13 12 13 8 11 8" {...commonProps} />
+          <path d="M13.5 16L9 12" {...commonProps} />
+        </svg>
+      );
     default:
       return null;
   }
@@ -301,6 +539,20 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navbarRef = useRef(null);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = (label) => {
+    if (window.innerWidth <= 1024) return;
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth <= 1024) return;
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 150);
+  };
 
   useEffect(() => {
     function handleOutsideClick(event) {
@@ -336,7 +588,6 @@ export default function Navbar() {
         <Link to="/" className="navbar__logo-wrap" onClick={() => setMobileOpen(false)}>
           <img src={logoImg} alt="Saroj Educational Group Logo" className="navbar__logo" />
         </Link>
-
         <button
           type="button"
           className="navbar__hamburger"
@@ -352,6 +603,8 @@ export default function Navbar() {
             <li
               key={i}
               className={`navbar__item${item.label === activeDropdown ? ' navbar__item--active' : ''}`}
+              onMouseEnter={() => item.hasDropdown && handleMouseEnter(item.label)}
+              onMouseLeave={handleMouseLeave}
             >
               {item.label === 'Home' ? (
                 <Link to="/" className="navbar__item-text" onClick={() => setActiveDropdown(null)}>
@@ -361,13 +614,20 @@ export default function Navbar() {
                 <Link to="/contact-us" className="navbar__item-text" onClick={() => setActiveDropdown(null)}>
                   {item.label}
                 </Link>
-              ) : item.label === 'About SEG' || item.label === 'Programs' ? (
+              ) : ['Placements', 'Explore more'].includes(item.label) ? (
+                <Link to={item.path} className="navbar__item-text" onClick={() => setActiveDropdown(null)}>
+                  {item.label}
+                </Link>
+              ) : ['About SEG', 'Programs', 'Admission', 'R & D', 'Our Institutions', 'Student Zone'].includes(item.label) ? (
                 <button
                   type="button"
                   className="navbar__item-button"
-                  onClick={() => setActiveDropdown((open) => (open === item.label ? null : item.label))}
+                  onClick={() => {
+                    if (window.innerWidth <= 1024) {
+                      setActiveDropdown((open) => (open === item.label ? null : item.label));
+                    }
+                  }}
                   aria-expanded={activeDropdown === item.label}
-                  aria-controls={item.label === 'About SEG' ? 'about-seg-panel' : 'programs-panel'}
                 >
                   <span className="navbar__item-text">{item.label}</span>
                   <span className="navbar__item-arrow">
@@ -390,7 +650,11 @@ export default function Navbar() {
       </div>
 
       {activeDropdown === 'About SEG' && (
-        <div className="navbar__dropdown-shell">
+        <div
+          className="navbar__dropdown-shell"
+          onMouseEnter={() => handleMouseEnter('About SEG')}
+          onMouseLeave={handleMouseLeave}
+        >
           <section className="about-panel" id="about-seg-panel">
             <div className="about-panel__menu">
               {aboutSegItems.map((item) => {
@@ -468,27 +732,35 @@ export default function Navbar() {
       )}
 
       {activeDropdown === 'Programs' && (
-        <div className="navbar__dropdown-shell">
+        <div
+          className="navbar__dropdown-shell"
+          onMouseEnter={() => handleMouseEnter('Programs')}
+          onMouseLeave={handleMouseLeave}
+        >
           <section className="programs-panel" id="programs-panel">
             <div className="programs-panel__menu">
-              {programsMenuItems.map((item) => (
-                <button
-                  key={item.title}
-                  type="button"
-                  className={`programs-panel__menu-item${item.accent ? ' programs-panel__menu-item--accent' : ''}`}
-                >
-                  <span className="programs-panel__menu-icon">
-                    <IconTile type={item.icon} />
-                  </span>
-                  <span className="programs-panel__menu-copy">
-                    <span className="programs-panel__menu-title">{item.title}</span>
-                    <span className="programs-panel__menu-description">{item.description}</span>
-                  </span>
-                  <span className="programs-panel__menu-arrow">
-                    <ChevronRight />
-                  </span>
-                </button>
-              ))}
+              {programsMenuItems.map((item) => {
+                const ItemTag = item.path ? Link : 'button';
+                const itemProps = item.path ? { to: item.path, onClick: () => setActiveDropdown(null) } : { type: 'button' };
+                return (
+                  <ItemTag
+                    key={item.title}
+                    {...itemProps}
+                    className={`programs-panel__menu-item${item.accent ? ' programs-panel__menu-item--accent' : ''}`}
+                  >
+                    <span className="programs-panel__menu-icon">
+                      <IconTile type={item.icon} />
+                    </span>
+                    <span className="programs-panel__menu-copy">
+                      <span className="programs-panel__menu-title">{item.title}</span>
+                      <span className="programs-panel__menu-description">{item.description}</span>
+                    </span>
+                    <span className="programs-panel__menu-arrow">
+                      <ChevronRight />
+                    </span>
+                  </ItemTag>
+                );
+              })}
             </div>
 
             <div className="programs-panel__main">
@@ -522,6 +794,289 @@ export default function Navbar() {
                       <p className="programs-panel__card-text">{item.description}</p>
                     </div>
                   </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
+
+      {activeDropdown === 'Admission' && (
+        <div
+          className="navbar__dropdown-shell"
+          onMouseEnter={() => handleMouseEnter('Admission')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <section className="admission-panel" id="admission-panel">
+            <div className="admission-panel__top">
+              <div className="admission-panel__menu">
+                {admissionMenuItems.map((item, index) => (
+                  <Link
+                    key={item.title}
+                    to={item.path}
+                    onClick={() => setActiveDropdown(null)}
+                    className={`admission-panel__menu-item${item.accent ? ' admission-panel__menu-item--accent' : ''} ${index === 1 ? 'color-green' : index === 2 ? 'color-purple' : index === 3 ? 'color-blue' : ''}`}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <span className="admission-panel__menu-icon">
+                      <IconTile type={item.icon} />
+                    </span>
+                    <span className="admission-panel__menu-copy">
+                      <span className="admission-panel__menu-title">{item.title}</span>
+                      <span className="admission-panel__menu-description">{item.description}</span>
+                    </span>
+                    <span className="admission-panel__menu-arrow">
+                      <ChevronRight />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="admission-panel__content">
+                <span className="admission-panel__eyebrow">ADMISSIONS</span>
+                <h3 className="admission-panel__title">
+                  Begin Your Journey
+                  <br />
+                  With <span>SEG</span>
+                </h3>
+                <p className="admission-panel__text">
+                  Follow our seamless process to secure your seat and begin your academic journey with us.
+                  We're here to guide you every step of the way.
+                </p>
+
+                <div className="admission-panel__stats">
+                  {admissionHighlights.map((item, idx) => (
+                    <article key={item.title} className="admission-panel__stat">
+                      <span className={`admission-panel__stat-icon ${idx === 1 ? 'color-green' : idx === 2 ? 'color-blue' : idx === 3 ? 'color-orange' : 'color-purple'}`}>
+                        <IconTile type={item.icon} />
+                      </span>
+                      <strong className={`admission-panel__stat-value ${idx === 1 ? 'text-green' : idx === 2 ? 'text-blue' : idx === 3 ? 'text-orange' : 'text-purple'}`}>{item.value}</strong>
+                      <span className="admission-panel__stat-title">{item.title}</span>
+                      <span className="admission-panel__stat-desc">{item.desc}</span>
+                    </article>
+                  ))}
+                </div>
+
+                <Link to="/contact-us" className="admission-panel__cta">
+                  Start Your Admission
+                  <span className="admission-panel__cta-arrow">
+                    <ChevronRight />
+                  </span>
+                </Link>
+              </div>
+
+              <div className="admission-panel__visual">
+                <div className="admission-panel__image-wrap">
+                  <img src={aboutBgImg} alt="SEG campus" className="admission-panel__image" />
+                </div>
+
+                <div className="admission-panel__quote">
+                  <span className="admission-panel__quote-mark">“</span>
+                  <p>
+                    Follow our seamless process to secure your seat and begin your academic journey with us.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="admission-panel__bottom">
+              {admissionFeatures.map((feature, i) => (
+                <div className="admission-panel__feature" key={i}>
+                  <div className="admission-panel__feature-icon">
+                    <IconTile type={feature.icon} />
+                  </div>
+                  <div className="admission-panel__feature-copy">
+                    <span className="admission-panel__feature-title">{feature.title}</span>
+                    <span className="admission-panel__feature-desc">{feature.desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      )}
+      {activeDropdown === 'Our Institutions' && (
+        <div
+          className="navbar__dropdown-shell"
+          onMouseEnter={() => handleMouseEnter('Our Institutions')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <section className="institutions-panel" id="institutions-panel">
+            <div className="institutions-panel__top">
+              <div className="institutions-panel__grid">
+                {institutionsData.map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="institutions-panel__item"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <span className="institutions-panel__icon">
+                      <IconTile type={item.icon} />
+                    </span>
+                    <div className="institutions-panel__copy">
+                      <h4 className="institutions-panel__name">{item.title}</h4>
+                      <p className="institutions-panel__desc">{item.description}</p>
+                    </div>
+                    <span className="institutions-panel__arrow">
+                      <ChevronRight />
+                    </span>
+                  </a>
+                ))}
+              </div>
+
+              <div className="institutions-panel__visual">
+                <div className="institutions-panel__image-wrap">
+                  <img src={aboutBgImg} alt="SEG Campus" className="institutions-panel__image" />
+                </div>
+                <div className="institutions-panel__quote">
+                  <span className="institutions-panel__quote-mark">“</span>
+                  <p>Excellence in education across all our specialized campuses.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
+      {activeDropdown === 'Student Zone' && (
+        <div
+          className="navbar__dropdown-shell"
+          onMouseEnter={() => handleMouseEnter('Student Zone')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <section className="student-zone-panel" id="student-zone-panel">
+            <div className="student-zone-panel__top">
+              <div className="student-zone-panel__grid">
+                {studentZoneItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    className="student-zone-panel__item"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <span className="student-zone-panel__icon">
+                      <IconTile type={item.icon} />
+                    </span>
+                    <div className="student-zone-panel__copy">
+                      <h4 className="student-zone-panel__name">{item.title}</h4>
+                      <p className="student-zone-panel__desc">{item.description}</p>
+                    </div>
+                    <span className="student-zone-panel__arrow">
+                      <ChevronRight />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="student-zone-panel__visual">
+                <div className="student-zone-panel__image-wrap">
+                  <img src={aboutBgImg} alt="Student Zone" className="student-zone-panel__image" />
+                </div>
+                <div className="student-zone-panel__quote">
+                  <span className="student-zone-panel__quote-mark">“</span>
+                  <p>Stay updated with the latest news and announcements.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
+      {activeDropdown === 'R & D' && (
+        <div
+          className="navbar__dropdown-shell navbar__dropdown-shell--full"
+          onMouseEnter={() => handleMouseEnter('R & D')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <section className="rd-panel" id="rd-panel">
+            <div className="rd-panel__shell">
+              <div className="rd-panel__top">
+                <div className="rd-panel__menu">
+                  {rdItems.map((item, index) => {
+                    const iconColors = ['orange', 'green', 'purple', 'blue'];
+                    return (
+                      <Link
+                        key={index}
+                        to={item.path}
+                        className={`rd-panel__menu-item${index === 0 ? ' rd-panel__menu-item--accent' : ''}`}
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <span className={`rd-panel__menu-icon rd-panel__menu-icon--${iconColors[index]}`}>
+                          <IconTile type={item.icon} />
+                        </span>
+                        <div className="rd-panel__menu-copy">
+                          <h4 className="rd-panel__menu-title">{item.title}</h4>
+                          <p className="rd-panel__menu-desc">{item.description}</p>
+                        </div>
+                        <span className="rd-panel__menu-arrow">
+                          <ChevronRight />
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                <div className="rd-panel__content">
+                  <span className="rd-panel__eyebrow">R & D AT SEG</span>
+                  <h3 className="rd-panel__title">
+                    Driving Innovation.
+                    <br />
+                    Creating <span>Impact.</span>
+                  </h3>
+                  <p className="rd-panel__text">
+                    At Saroj Educational Group, we are committed to fostering a culture of research and innovation. Our R & D initiatives focus on solving real-world challenges and creating technologies that make a difference.
+                  </p>
+
+                  <div className="rd-panel__metrics">
+                    {rdMetrics.map((item, idx) => {
+                      const metricColors = ['blue', 'green', 'purple', 'orange'];
+                      const color = metricColors[idx];
+                      return (
+                        <article key={idx} className="rd-panel__metric">
+                          <span className={`rd-panel__metric-icon rd-panel__metric-icon--${color}`}>
+                            <IconTile type={item.icon} />
+                          </span>
+                          <strong className={`rd-panel__metric-value rd-panel__metric-value--${color}`}>{item.value}</strong>
+                          <span className="rd-panel__metric-label">{item.label}</span>
+                          <span className="rd-panel__metric-sub">{item.sub}</span>
+                        </article>
+                      );
+                    })}
+                  </div>
+
+                  <Link to="/rd-projects" className="rd-panel__cta" onClick={() => setActiveDropdown(null)}>
+                    Explore Our Innovations
+                    <span className="rd-panel__cta-arrow">
+                      <ChevronRight />
+                    </span>
+                  </Link>
+                </div>
+
+                <div className="rd-panel__visual">
+                  <div className="rd-panel__image-wrap">
+                    <img src={aboutBgImg} alt="R & D Excellence" className="rd-panel__image" />
+                  </div>
+                  <div className="rd-panel__quote">
+                    <span className="rd-panel__quote-mark">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 8.44772 10.4647 8 11.017 8H14.017C14.5693 8 15.017 7.55228 15.017 7V4C15.017 3.44772 14.5693 3 14.017 3H11.017C8.25558 3 6.017 5.23858 6.017 8V15C6.017 18.3137 8.70329 21 12.017 21H14.017Z"/></svg>
+                    </span>
+                    <p>We are committed to pushing boundaries through research, innovation, and impactful technologies.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rd-panel__bottom">
+                {rdBottomFeatures.map((feature, i) => (
+                  <div className="rd-panel__feature" key={i}>
+                    <div className="rd-panel__feature-icon">
+                      <IconTile type={feature.icon} />
+                    </div>
+                    <div className="rd-panel__feature-copy">
+                      <span className="rd-panel__feature-title">{feature.title}</span>
+                      <span className="rd-panel__feature-desc">{feature.desc}</span>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import heroBgImg from '../../assets/images/hero-bg.png'
+import heroBgImg from '../../assets/images/seg.jpeg'
 import facultyBgImg from '../../assets/images/faculty-bg.png'
 
 export default function ChairmanHero() {

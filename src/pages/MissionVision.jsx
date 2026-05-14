@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import institutionsBg from '../assets/images/institutions-bg.png';
+import institutionsBg from '../assets/images/seg.jpeg';
 import missionImg from '../assets/images/mission-illustration.png';
 import visionImg from '../assets/images/vision-illustration.png';
 import '../mission-vision.css';
@@ -49,7 +49,7 @@ const MissionVision = () => {
             </div>
             <div className="mv-stats-bar__info">
               <span className="mv-stats-bar__value">27+</span>
-              <span className="mv-stats-bar__label">YEARS OF<br/>EXCELLENCE</span>
+              <span className="mv-stats-bar__label">YEARS OF<br />EXCELLENCE</span>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ const MissionVision = () => {
             </div>
             <div className="mv-stats-bar__info">
               <span className="mv-stats-bar__value">25K+</span>
-              <span className="mv-stats-bar__label">HAPPY<br/>STUDENTS</span>
+              <span className="mv-stats-bar__label">HAPPY<br />STUDENTS</span>
             </div>
           </div>
 
@@ -89,7 +89,7 @@ const MissionVision = () => {
             </div>
             <div className="mv-stats-bar__info">
               <span className="mv-stats-bar__value">6+</span>
-              <span className="mv-stats-bar__label">INSTITUTIONS<br/>ACROSS INDIA</span>
+              <span className="mv-stats-bar__label">INSTITUTIONS<br />ACROSS INDIA</span>
             </div>
           </div>
 
@@ -105,7 +105,7 @@ const MissionVision = () => {
             </div>
             <div className="mv-stats-bar__info">
               <span className="mv-stats-bar__value">100+</span>
-              <span className="mv-stats-bar__label">AWARDS &<br/>RECOGNITIONS</span>
+              <span className="mv-stats-bar__label">AWARDS &<br />RECOGNITIONS</span>
             </div>
           </div>
         </div>

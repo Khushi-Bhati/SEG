@@ -81,7 +81,7 @@ const milestones = [
     image: aboutBgImg,
   },
   {
-    year: 'Presents',
+    year: 'Present',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M5 20V6H15V20" />
