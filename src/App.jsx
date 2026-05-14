@@ -19,6 +19,7 @@ import TechnologiesDeveloped from './pages/TechnologiesDeveloped'
 import AwardWinningProjects from './pages/AwardWinningProjects'
 import ResearchPublications from './pages/ResearchPublications'
 import Footer from './components/Footer'
+import Chatbot from './components/Chatbot'
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/research-publications" element={<ResearchPublications />} />
       </Routes>
       <Footer />
+      <Chatbot />
     </Router>
   )
 }
