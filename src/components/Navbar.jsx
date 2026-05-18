@@ -79,6 +79,12 @@ const programsMenuItems = [
     path: '/programs/bca',
   },
   {
+    title: 'Faculty',
+    description: 'Meet our expert teaching community at SEG.',
+    icon: 'people',
+    path: '/faculty-new',
+  },
+  {
     title: 'Masters in Computer Applications',
     description: 'Our MCA program equips students with expertise in software development, IT, and systems management.',
     icon: 'computer',
@@ -151,6 +157,7 @@ const admissionHighlights = [
 ];
 
 const institutionsData = [
+
   {
     title: 'Shivdan Singh Institute of Technology and Management',
     description: 'Approved by AICTE and affiliated to AKTU, Lucknow, College Code: 007',
@@ -584,7 +591,8 @@ export default function Navbar() {
 
   return (
     <nav className="navbar" id="main-nav" ref={navbarRef}>
-      <div className="navbar__inner">
+      {/* Mobile top bar - logo + hamburger */}
+      <div className="navbar__mobile-bar">
         <Link to="/" className="navbar__logo-wrap" onClick={() => setMobileOpen(false)}>
           <img src={logoImg} alt="Saroj Educational Group Logo" className="navbar__logo" />
         </Link>
@@ -597,8 +605,136 @@ export default function Navbar() {
         >
           <span /><span /><span />
         </button>
+      </div>
 
-        <ul className={`navbar__nav${mobileOpen ? ' navbar__nav--open' : ''}`}>
+      {/* Mobile drawer overlay */}
+      {mobileOpen && (
+        <div
+          className="navbar__overlay"
+          onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}
+        />
+      )}
+
+      {/* Mobile drawer */}
+      <div className={`navbar__drawer${mobileOpen ? ' navbar__drawer--open' : ''}`}>
+        <div className="navbar__drawer-header">
+          <button
+            type="button"
+            className="navbar__drawer-close"
+            onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}
+            aria-label="Close menu"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+
+        <ul className="navbar__nav navbar__nav--open">
+          {navItems.map((item, i) => (
+            <li
+              key={i}
+              className={`navbar__item${item.label === activeDropdown ? ' navbar__item--active' : ''}`}
+            >
+              {item.label === 'Home' ? (
+                <Link to="/" className="navbar__item-text" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                  {item.label}
+                </Link>
+              ) : item.label === 'Contact us' ? (
+                <Link to="/contact-us" className="navbar__item-text" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                  {item.label}
+                </Link>
+              ) : ['Placements', 'Explore more'].includes(item.label) ? (
+                <Link to={item.path} className="navbar__item-text" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                  {item.label}
+                </Link>
+              ) : ['About SEG', 'Programs', 'Admission', 'R & D', 'Our Institutions', 'Student Zone'].includes(item.label) ? (
+                <>
+                  <button
+                    type="button"
+                    className="navbar__item-button"
+                    onClick={() => setActiveDropdown(open => open === item.label ? null : item.label)}
+                    aria-expanded={activeDropdown === item.label}
+                  >
+                    <span className="navbar__item-text">{item.label}</span>
+                    <span className="navbar__item-arrow" style={{ transform: activeDropdown === item.label ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}><DropdownArrow /></span>
+                  </button>
+                  {/* Inline sub-items */}
+                  {activeDropdown === item.label && (
+                    <ul className="navbar__mobile-subnav">
+                      {item.label === 'About SEG' && aboutSegItems.map(sub => (
+                        <li key={sub.title}>
+                          <Link to={sub.path} className="navbar__mobile-subitem" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                            <span className="navbar__mobile-subitem-icon"><IconTile type={sub.icon} /></span>
+                            <span>{sub.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                      {item.label === 'Programs' && programsMenuItems.map(sub => (
+                        <li key={sub.title}>
+                          <Link to={sub.path} className="navbar__mobile-subitem" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                            <span className="navbar__mobile-subitem-icon"><IconTile type={sub.icon} /></span>
+                            <span>{sub.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                      {item.label === 'Admission' && admissionMenuItems.map(sub => (
+                        <li key={sub.title}>
+                          <Link to={sub.path} className="navbar__mobile-subitem" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                            <span className="navbar__mobile-subitem-icon"><IconTile type={sub.icon} /></span>
+                            <span>{sub.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                      {item.label === 'R & D' && rdItems.map(sub => (
+                        <li key={sub.title}>
+                          <Link to={sub.path} className="navbar__mobile-subitem" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                            <span className="navbar__mobile-subitem-icon"><IconTile type={sub.icon} /></span>
+                            <span>{sub.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                      {item.label === 'Our Institutions' && institutionsData.map(sub => (
+                        <li key={sub.title}>
+                          {sub.path ? (
+                            <Link to={sub.path} className="navbar__mobile-subitem" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                              <span className="navbar__mobile-subitem-icon"><IconTile type={sub.icon} /></span>
+                              <span>{sub.title}</span>
+                            </Link>
+                          ) : (
+                            <a href={sub.url} target="_blank" rel="noopener noreferrer" className="navbar__mobile-subitem" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                              <span className="navbar__mobile-subitem-icon"><IconTile type={sub.icon} /></span>
+                              <span>{sub.title}</span>
+                            </a>
+                          )}
+                        </li>
+                      ))}
+                      {item.label === 'Student Zone' && studentZoneItems.map(sub => (
+                        <li key={sub.title}>
+                          <Link to={sub.path} className="navbar__mobile-subitem" onClick={() => { setMobileOpen(false); setActiveDropdown(null); }}>
+                            <span className="navbar__mobile-subitem-icon"><IconTile type={sub.icon} /></span>
+                            <span>{sub.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <span className="navbar__item-text">{item.label}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="navbar__inner">
+        <Link to="/" className="navbar__logo-wrap navbar__logo-wrap--desktop" onClick={() => setMobileOpen(false)}>
+          <img src={logoImg} alt="Saroj Educational Group Logo" className="navbar__logo" />
+        </Link>
+
+        <ul className={`navbar__nav${mobileOpen ? ' navbar__nav--open' : ''}`}
+        >
           {navItems.map((item, i) => (
             <li
               key={i}
@@ -905,25 +1041,45 @@ export default function Navbar() {
             <div className="institutions-panel__top">
               <div className="institutions-panel__grid">
                 {institutionsData.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="institutions-panel__item"
-                    onClick={() => setActiveDropdown(null)}
-                  >
-                    <span className="institutions-panel__icon">
-                      <IconTile type={item.icon} />
-                    </span>
-                    <div className="institutions-panel__copy">
-                      <h4 className="institutions-panel__name">{item.title}</h4>
-                      <p className="institutions-panel__desc">{item.description}</p>
-                    </div>
-                    <span className="institutions-panel__arrow">
-                      <ChevronRight />
-                    </span>
-                  </a>
+                  item.path ? (
+                    <Link
+                      key={index}
+                      to={item.path}
+                      className="institutions-panel__item"
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      <span className="institutions-panel__icon">
+                        <IconTile type={item.icon} />
+                      </span>
+                      <div className="institutions-panel__copy">
+                        <h4 className="institutions-panel__name">{item.title}</h4>
+                        <p className="institutions-panel__desc">{item.description}</p>
+                      </div>
+                      <span className="institutions-panel__arrow">
+                        <ChevronRight />
+                      </span>
+                    </Link>
+                  ) : (
+                    <a
+                      key={index}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="institutions-panel__item"
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      <span className="institutions-panel__icon">
+                        <IconTile type={item.icon} />
+                      </span>
+                      <div className="institutions-panel__copy">
+                        <h4 className="institutions-panel__name">{item.title}</h4>
+                        <p className="institutions-panel__desc">{item.description}</p>
+                      </div>
+                      <span className="institutions-panel__arrow">
+                        <ChevronRight />
+                      </span>
+                    </a>
+                  )
                 ))}
               </div>
 
@@ -985,7 +1141,7 @@ export default function Navbar() {
       )}
       {activeDropdown === 'R & D' && (
         <div
-          className="navbar__dropdown-shell navbar__dropdown-shell--full"
+          className="navbar__dropdown-shell"
           onMouseEnter={() => handleMouseEnter('R & D')}
           onMouseLeave={handleMouseLeave}
         >
@@ -1059,7 +1215,7 @@ export default function Navbar() {
                   </div>
                   <div className="rd-panel__quote">
                     <span className="rd-panel__quote-mark">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 8.44772 10.4647 8 11.017 8H14.017C14.5693 8 15.017 7.55228 15.017 7V4C15.017 3.44772 14.5693 3 14.017 3H11.017C8.25558 3 6.017 5.23858 6.017 8V15C6.017 18.3137 8.70329 21 12.017 21H14.017Z"/></svg>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C15.4647 8 15.017 8.44772 15.017 9V12C15.017 12.5523 14.5693 13 14.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 8.44772 10.4647 8 11.017 8H14.017C14.5693 8 15.017 7.55228 15.017 7V4C15.017 3.44772 14.5693 3 14.017 3H11.017C8.25558 3 6.017 5.23858 6.017 8V15C6.017 18.3137 8.70329 21 12.017 21H14.017Z" /></svg>
                     </span>
                     <p>We are committed to pushing boundaries through research, innovation, and impactful technologies.</p>
                   </div>

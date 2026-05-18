@@ -1,5 +1,5 @@
 import aboutBg from '../assets/images/about-bg.png';
-import campusBg from '../assets/images/campus-bg.png';
+import campusBg from '../assets/images/seg.jpeg';
 import heroBg from '../assets/images/hero-bg.png';
 import institutionsBg from '../assets/images/institutions-bg.png';
 import placementsBg from '../assets/images/placements-bg.png';
@@ -11,9 +11,11 @@ const ArrowRight = () => (
 );
 
 const BuildingIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 21V7.5L12 3L20 7.5V21" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-    <path d="M9 10H9.01M15 10H15.01M9 14H9.01M15 14H15.01" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L4 5V11C4 16.5 7.5 21.5 12 23C16.5 21.5 20 16.5 20 11V5L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M9 14V17M12 14V17M15 14V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M8 10H16V12H8V10Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M10 7H14V9H10V7Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -62,6 +64,7 @@ const institutions = [
     approval: 'Approved by AICTE and affiliated to AKTU, Lucknow.',
     image: heroBg,
     icon: <BuildingIcon />,
+    url: 'https://ssitm.in/',
   },
   {
     title: 'Saroj Institute of Technology and Management',
@@ -69,6 +72,7 @@ const institutions = [
     approval: 'Approved by AICTE and affiliated to AKTU, Lucknow.',
     image: aboutBg,
     icon: <BuildingIcon />,
+    url: 'https://sitmlko.org/',
   },
   {
     title: 'Saroj College of Law',
@@ -76,6 +80,7 @@ const institutions = [
     approval: 'Approved by Bar Council of India and affiliated to AKTU, Lucknow.',
     image: institutionsBg,
     icon: <LawIcon />,
+    url: 'https://seglko.org/scl/',
   },
   {
     title: 'Saroj College of Pharmacy',
@@ -83,6 +88,7 @@ const institutions = [
     approval: 'Approved by Pharmacy Council of India and affiliated to AKTU, Lucknow.',
     image: placementsBg,
     icon: <PharmacyIcon />,
+    url: 'https://seglko.org/scp/',
   },
 ];
 
@@ -91,6 +97,7 @@ const featuredInstitution = {
   approval: 'Approved by AICTE and affiliated to AKTU, Lucknow.',
   image: campusBg,
   icon: <GearIcon />,
+  url: 'https://seglko.org/scep/',
 };
 
 function InstitutionCard({ institution }) {
@@ -121,7 +128,12 @@ function InstitutionCard({ institution }) {
           </div>
         </div>
 
-        <a href="#institutions-showcase" className="institutions-showcase__link">
+        <a
+          href={institution.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="institutions-showcase__link"
+        >
           Explore Institute
           <span className="institutions-showcase__link-arrow">
             <ArrowRight />
@@ -150,12 +162,6 @@ export default function FullSections() {
             </p>
           </div>
 
-          <button className="btn btn--primary institutions-showcase__cta" id="institutions-showcase-btn">
-            View all Institutions
-            <span className="btn__arrow">
-              <ArrowRight />
-            </span>
-          </button>
         </div>
 
         <div className="institutions-showcase__grid">
@@ -165,15 +171,17 @@ export default function FullSections() {
         </div>
 
         <article className="institutions-showcase__featured">
-          <img
-            src={featuredInstitution.image}
-            alt={featuredInstitution.title}
-            className="institutions-showcase__featured-image"
-            loading="lazy"
-          />
+          <div className="institutions-showcase__featured-image-wrap">
+            <img
+              src={featuredInstitution.image}
+              alt={featuredInstitution.title}
+              className="institutions-showcase__featured-image"
+              loading="lazy"
+            />
+            <span className="institutions-showcase__featured-badge">{featuredInstitution.icon}</span>
+          </div>
 
           <div className="institutions-showcase__featured-content">
-            <span className="institutions-showcase__featured-badge">{featuredInstitution.icon}</span>
             <h3 className="institutions-showcase__featured-title">{featuredInstitution.title}</h3>
 
             <div className="institutions-showcase__meta-row institutions-showcase__meta-row--gold">
@@ -183,7 +191,12 @@ export default function FullSections() {
               <span>{featuredInstitution.approval}</span>
             </div>
 
-            <a href="#institutions-showcase" className="institutions-showcase__link institutions-showcase__link--featured">
+            <a
+              href={featuredInstitution.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="institutions-showcase__link institutions-showcase__link--featured"
+            >
               Explore Institute
               <span className="institutions-showcase__link-arrow">
                 <ArrowRight />

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import placementsBg from '../assets/images/placements-bg.png';
 import program1 from '../assets/images/program1.png';
 import program2 from '../assets/images/program2.png';
@@ -95,22 +96,103 @@ const placementStats = [
   { label: 'Top Industry Roles', value: 'Top', icon: <MedalIcon />, tone: 'violet' },
 ];
 
-const createLogo = (text, background = '#ffffff', color = '#162341') => {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="56"><rect width="100%" height="100%" rx="18" fill="${background}"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="${color}">${text}</text></svg>`;
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-};
+const CognizantLogo = () => (
+  <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" width="110" height="36">
+    <circle cx="20" cy="20" r="14" fill="#0033a0"/>
+    <path d="M20 10 a10 10 0 0 0 0 20" fill="none" stroke="white" strokeWidth="3"/>
+    <text x="38" y="25" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="#0033a0">Cognizant</text>
+  </svg>
+);
+
+const AccentureLogo = () => (
+  <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" width="110" height="36">
+    <polygon points="55,6 65,6 60,16" fill="#a100ff"/>
+    <text x="10" y="30" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="#000">accenture</text>
+  </svg>
+);
+
+const AonLogo = () => (
+  <svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg" width="70" height="36">
+    <rect width="80" height="40" fill="#cc0000" rx="4"/>
+    <text x="50%" y="27" textAnchor="middle" fontFamily="Arial" fontWeight="bold" fontSize="20" fill="white">Aon</text>
+  </svg>
+);
+
+const AsianPaintsLogo = () => (
+  <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" width="120" height="36">
+    <circle cx="18" cy="20" r="13" fill="#e31e24"/>
+    <circle cx="18" cy="20" r="7" fill="#f7941d"/>
+    <circle cx="18" cy="20" r="3" fill="white"/>
+    <text x="36" y="25" fontFamily="Arial" fontWeight="bold" fontSize="12" fill="#e31e24">Asian Paints</text>
+  </svg>
+);
+
+const CMCLogo = () => (
+  <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" width="110" height="36">
+    <rect width="120" height="40" fill="#003087" rx="4"/>
+    <text x="50%" y="26" textAnchor="middle" fontFamily="Arial" fontWeight="bold" fontSize="14" fill="white">CMC Limited</text>
+  </svg>
+);
+
+const GoogleLogo = () => (
+  <svg viewBox="0 0 110 40" xmlns="http://www.w3.org/2000/svg" width="100" height="36">
+    <text x="0" y="30" fontFamily="Arial" fontWeight="bold" fontSize="26">
+      <tspan fill="#4285F4">G</tspan>
+      <tspan fill="#EA4335">o</tspan>
+      <tspan fill="#FBBC05">o</tspan>
+      <tspan fill="#4285F4">g</tspan>
+      <tspan fill="#34A853">l</tspan>
+      <tspan fill="#EA4335">e</tspan>
+    </text>
+  </svg>
+);
+
+const HDFCLogo = () => (
+  <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" width="120" height="36">
+    <rect width="130" height="40" fill="#004C8F" rx="4"/>
+    <text x="50%" y="26" textAnchor="middle" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="white">HDFC BANK</text>
+  </svg>
+);
+
+const MicrosoftLogo = () => (
+  <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" width="120" height="36">
+    <rect x="0" y="4" width="14" height="14" fill="#F25022"/>
+    <rect x="16" y="4" width="14" height="14" fill="#7FBA00"/>
+    <rect x="0" y="20" width="14" height="14" fill="#00A4EF"/>
+    <rect x="16" y="20" width="14" height="14" fill="#FFB900"/>
+    <text x="36" y="26" fontFamily="Arial" fontSize="13" fill="#737373">Microsoft</text>
+  </svg>
+);
+
+const NIITLogo = () => (
+  <svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg" width="70" height="36">
+    <text x="0" y="30" fontFamily="Arial" fontWeight="bold" fontSize="26">
+      <tspan fill="#e2001a">N</tspan>
+      <tspan fill="#003087">I</tspan>
+      <tspan fill="#e2001a">I</tspan>
+      <tspan fill="#003087">T</tspan>
+    </text>
+  </svg>
+);
+
+const TCSLogo = () => (
+  <svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg" width="70" height="36">
+    <text x="0" y="30" fontFamily="Arial" fontWeight="bold" fontSize="24" fill="#f15a22">TCS</text>
+    <line x1="0" y1="33" x2="52" y2="33" stroke="#002b5c" strokeWidth="2"/>
+  </svg>
+);
 
 const hiringPartners = [
-  { name: 'Cognizant', logo: createLogo('Cognizant', '#ffffff', '#0f4b8f') },
-  { name: 'Accenture', logo: createLogo('Accenture', '#ffffff', '#000000') },
-  { name: 'AON', logo: createLogo('AON', '#ffffff', '#001f5b') },
-  { name: 'Asian Paints', logo: createLogo('Asian Paints', '#ffffff', '#d8451b') },
-  { name: 'CMC Limited', logo: createLogo('CMC Limited', '#ffffff', '#0d4f8b') },
-  { name: 'Google', logo: createLogo('Google', '#ffffff', '#0f4b8f') },
-  { name: 'HDFC BANK', logo: createLogo('HDFC BANK', '#ffffff', '#002b5c') },
-  { name: 'Microsoft', logo: createLogo('Microsoft', '#ffffff', '#737373') },
-  { name: 'NIIT', logo: createLogo('NIIT', '#ffffff', '#d21f3c') },
-  { name: 'TCS', logo: createLogo('TCS', '#ffffff', '#f15a22') },
+  { name: 'Cognizant', LogoComponent: CognizantLogo },
+  { name: 'Accenture', LogoComponent: AccentureLogo },
+  { name: 'AON', LogoComponent: AonLogo },
+  { name: 'Asian Paints', LogoComponent: AsianPaintsLogo },
+  { name: 'CMC Limited', LogoComponent: CMCLogo },
+  { name: 'Google', LogoComponent: GoogleLogo },
+  { name: 'HDFC Bank', LogoComponent: HDFCLogo },
+  { name: 'Microsoft', LogoComponent: MicrosoftLogo },
+  { name: 'NIIT', LogoComponent: NIITLogo },
+  { name: 'TCS', LogoComponent: TCSLogo },
 ];
 
 function PlacementCard({ card }) {
@@ -151,6 +233,7 @@ function PlacementCard({ card }) {
 }
 
 export default function PlacementsShowcase() {
+  const navigate = useNavigate();
   return (
     <section className="placements-showcase" id="placements-showcase">
       <div className="placements-showcase__shell">
@@ -165,7 +248,7 @@ export default function PlacementsShowcase() {
             </p>
           </div>
 
-          <button className="btn btn--primary placements-showcase__cta" id="placements-stories-btn">
+          <button className="btn btn--primary placements-showcase__cta" onClick={() => { navigate('/placements'); window.scrollTo(0, 0); }}>
             View More Success Stories
             <span className="btn__arrow">
               <ArrowRight />
@@ -224,16 +307,13 @@ export default function PlacementsShowcase() {
           </div>
 
           <div className="placements-showcase__partners-rail">
-            {hiringPartners.map((partner) => (
-              <div className="placements-showcase__partner-item" key={partner.name}>
-                <img
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  className="placements-showcase__partner-logo"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+            <div className="placements-showcase__partners-track">
+              {[...hiringPartners, ...hiringPartners].map((partner, index) => (
+                <div className="placements-showcase__partner-item" key={`${partner.name}-${index}`}>
+                  <partner.LogoComponent />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>

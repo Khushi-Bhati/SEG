@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import institutionsBg from '../assets/images/institutions-bg.png';
+import institutionsBg from '../assets/images/seg.jpeg';
 import '../why-join-seg.css';
 
 const reasons = [
@@ -136,13 +136,7 @@ const WhyJoinSeg = () => {
       <section className="wjs-hero">
         <div className="wjs-hero__inner">
           <div className="wjs-hero__content">
-            <div className="wjs-hero__breadcrumbs">
-              <Link to="/">Home</Link>
-              <span className="separator">&gt;</span>
-              <span>About SEG</span>
-              <span className="separator">&gt;</span>
-              <span className="current">Why Join SEG</span>
-            </div>
+
 
             <h1 className="wjs-hero__title">
               The Legacy of

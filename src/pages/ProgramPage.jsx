@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { programsData } from '../data/programsData';
 import '../ProgramPage.css';
-import heroImage from '../assets/images/program1.png'; // Fallback
+import heroImage from '../assets/images/programsimg.jpeg'; // Fallback
 import ctaBg from '../assets/images/about-bg.png'; // Fallback
 
 // Shared Icon component for all program icons

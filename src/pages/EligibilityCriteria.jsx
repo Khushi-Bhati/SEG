@@ -23,24 +23,19 @@ const EligibilityCriteria = () => {
           <h1 className="eligibility-hero__title">Eligibility Criteria</h1>
           <div className="eligibility-hero__line"></div>
           <p className="eligibility-hero__subtitle">
-            Check the eligibility requirements for your desired program<br/>
+            Check the eligibility requirements for your desired program<br />
             and take the first step toward your future.
           </p>
         </div>
       </section>
-      
-      {/* BREADCRUMB */}
-      <div className="eligibility-breadcrumb-wrapper">
-        <div className="eligibility-breadcrumb">
-          <Link to="/">HOME</Link> &gt; <Link to="#">ADMISSION</Link> &gt; <span>ELIGIBILITY</span>
-        </div>
-      </div>
+
+
 
       {/* MAIN CONTENT SECTION */}
       <section className="eligibility-main">
         <div className="eligibility-container">
           <div className="eligibility-layout">
-            
+
             {/* LEFT SIDEBAR */}
             <aside className="eligibility-sidebar">
               <div className="eligibility-card">
@@ -50,8 +45,8 @@ const EligibilityCriteria = () => {
                   <div className="eligibility-card__icon-ring">
                     <div className="eligibility-card__icon">
                       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="white"/>
-                        <path d="M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z" fill="white"/>
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3Z" fill="white" />
+                        <path d="M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z" fill="white" />
                       </svg>
                     </div>
                   </div>
@@ -79,20 +74,20 @@ const EligibilityCriteria = () => {
             {/* RIGHT CONTENT */}
             <div className="eligibility-content">
               <h2 className="eligibility-content__title">Admission Eligibility Criteria</h2>
-              
+
               {/* TABS */}
               <div className="eligibility-tabs">
-                <button 
+                <button
                   className={`eligibility-tab ${activeTab === 'undergraduate' ? 'active' : ''}`}
                   onClick={() => setActiveTab('undergraduate')}
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
                   </svg>
                   Undergraduate
                 </button>
-                <button 
+                <button
                   className={`eligibility-tab ${activeTab === 'postgraduate' ? 'active' : ''}`}
                   onClick={() => setActiveTab('postgraduate')}
                 >
@@ -104,7 +99,7 @@ const EligibilityCriteria = () => {
                   </svg>
                   Postgraduate
                 </button>
-                <button 
+                <button
                   className={`eligibility-tab ${activeTab === 'diploma' ? 'active' : ''}`}
                   onClick={() => setActiveTab('diploma')}
                 >
@@ -126,8 +121,8 @@ const EligibilityCriteria = () => {
                     <div className="eligibility-accordion-header-left">
                       <div className="eligibility-accordion-icon eligibility-accordion-icon--blue">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                          <path d="M6 12v5c3 3 9 3 12 0v-5" />
                         </svg>
                       </div>
                       <span className="eligibility-accordion-title">Academic Requirements</span>
@@ -177,7 +172,7 @@ const EligibilityCriteria = () => {
                   {openAccordion === 'age' && (
                     <div className="eligibility-accordion-body">
                       <div className="eligibility-checklist">
-                         <div className="eligibility-check-item">
+                        <div className="eligibility-check-item">
                           <span className="eligibility-check-icon">✓</span>
                           Candidates must be at least 17 years of age on or before 31st December of the admission year.
                         </div>
@@ -219,7 +214,7 @@ const EligibilityCriteria = () => {
                           All candidates must submit original documents for verification
                         </div>
                         <div className="eligibility-check-line"></div>
-                        
+
                         <div className="eligibility-check-item">
                           <span className="eligibility-check-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -227,7 +222,7 @@ const EligibilityCriteria = () => {
                           International students must have equivalent qualifications
                         </div>
                         <div className="eligibility-check-line"></div>
-                        
+
                         <div className="eligibility-check-item">
                           <span className="eligibility-check-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -235,7 +230,7 @@ const EligibilityCriteria = () => {
                           5% relaxation in marks for reserved category candidates
                         </div>
                         <div className="eligibility-check-line"></div>
-                        
+
                         <div className="eligibility-check-item">
                           <span className="eligibility-check-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -258,7 +253,7 @@ const EligibilityCriteria = () => {
         <div className="eligibility-features">
           <div className="eligibility-feature">
             <div className="eligibility-feature__icon eligibility-feature__icon--blue">
-               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
                 <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -302,7 +297,7 @@ const EligibilityCriteria = () => {
 
           <div className="eligibility-feature">
             <div className="eligibility-feature__icon eligibility-feature__icon--purple">
-               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
               </svg>

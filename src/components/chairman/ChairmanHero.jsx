@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import heroBgImg from '../../assets/images/seg.jpeg'
-import facultyBgImg from '../../assets/images/faculty-bg.png'
+import facultyBgImg from '../../assets/images/chairmansimage.jpeg'
 
 export default function ChairmanHero() {
   return (
@@ -30,10 +30,6 @@ export default function ChairmanHero() {
         </div>
 
         <div className="chairman-hero__visual">
-          <div className="chairman-hero__campus-wrap">
-            <img src={heroBgImg} alt="Saroj Institute of Technology & Management campus" className="chairman-hero__campus" />
-          </div>
-
           <div className="chairman-hero__portrait-blob" aria-hidden="true" />
           <div className="chairman-hero__portrait-wrap">
             <img src={facultyBgImg} alt="Chairman portrait" className="chairman-hero__portrait" />

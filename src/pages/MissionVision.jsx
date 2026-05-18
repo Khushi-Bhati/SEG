@@ -11,13 +11,6 @@ const MissionVision = () => {
       <section className="mv-hero">
         <div className="mv-hero__inner">
           <div className="mv-hero__content">
-            <div className="mv-hero__breadcrumbs">
-              <Link to="/">Home</Link>
-              <span className="separator">&gt;</span>
-              <span>About SEG</span>
-              <span className="separator">&gt;</span>
-              <span className="current">Mission & Vision</span>
-            </div>
 
             <h1 className="mv-hero__title">
               The Legacy of

@@ -9,10 +9,10 @@
 /* ── Hero ── */
 .rp-hero {
   position: relative;
-  background: white;
-  padding: 4rem 5% 0;
+  background: linear-gradient(to right, #ffffff 40%, #f8fbff 100%);
+  padding: 6rem 5% 4rem;
   overflow: hidden;
-  margin-top: 60px; /* Clear navbar logo */
+  margin-top: 0;
 }
 
 .rp-hero__container {
@@ -24,7 +24,7 @@
 }
 
 .rp-hero__content {
-  max-width: 600px;
+  max-width: 480px;
 }
 
 .rp-hero__title {
@@ -52,8 +52,18 @@
 }
 
 .rp-hero__visual {
-  width: 450px;
-  opacity: 0.9;
+  width: 750px;
+  position: relative;
+  z-index: 2;
+  margin-right: -5%;
+}
+
+.rp-hero__img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  display: block;
+  filter: contrast(1.05) brightness(1.02);
 }
 
 /* ── Breadcrumbs ── */
@@ -233,7 +243,14 @@
 @media (max-width: 1200px) {
   .rp-hero__container { flex-direction: column; text-align: center; }
   .rp-hero__title::after { margin: 1rem auto 0; }
-  .rp-hero__visual { width: 350px; margin-top: 2rem; }
+  .rp-hero__visual { 
+    width: 90%; 
+    max-width: 400px;
+    margin-top: 2rem; 
+  }
+  .rp-hero__img {
+    transform: none;
+  }
   .rp-table-container { overflow-x: auto; }
   .rp-table { min-width: 1000px; }
 }

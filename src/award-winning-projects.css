@@ -10,7 +10,7 @@
 .aw-hero {
   position: relative;
   background: white;
-  padding: 4rem 5% 2rem;
+  padding: 4rem 5% 4rem;
   overflow: hidden;
   margin-top: 60px; /* Clear navbar logo */
 }
@@ -18,41 +18,55 @@
 .aw-hero__container {
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr;
+  gap: 2rem;
   align-items: center;
 }
 
+.aw-hero__center-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aw-hero__trophy {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
 .aw-hero__content {
-  max-width: 600px;
+  max-width: none;
+}
+
+.aw-hero__card {
+  width: 100%;
 }
 
 .aw-hero__title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 800;
   color: #032155;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
-  letter-spacing: -1.5px;
+  white-space: nowrap;
 }
 
-.aw-hero__title::after {
-  content: '';
-  display: block;
-  width: 60px;
+.aw-hero__line {
+  width: 50px;
   height: 4px;
   background: #ffbe23;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .aw-hero__text {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #64748b;
   line-height: 1.6;
-}
-
-.aw-hero__visual {
-  width: 350px;
-  opacity: 0.8;
+  max-width: 500px;
 }
 
 /* ── Layout Grid ── */
@@ -188,7 +202,7 @@
 .aw-card--impact {
   background: linear-gradient(180deg, #032155 0%, #0849bc 100%);
   color: white;
-  padding: 3rem 2.5rem;
+  padding: 4.5rem 2.5rem;
   border-radius: 24px;
   position: relative;
   overflow: hidden;
@@ -196,9 +210,9 @@
 }
 
 .aw-card__title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   position: relative;
   z-index: 2;
 }
@@ -308,7 +322,7 @@
 
 /* ── Footer Bar ── */
 .aw-footer-bar {
-  margin: 2rem 5% 5rem;
+  margin: -3rem 5% 5rem;
   background: white;
   padding: 1.5rem 3rem;
   border-radius: 20px;
@@ -319,6 +333,7 @@
   border: 1px solid #f1f5f9;
   position: relative;
   overflow: hidden;
+  z-index: 5;
 }
 
 .aw-footer-bar__icon {
@@ -354,17 +369,20 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1200px) {
-  .aw-main__container { grid-template-columns: 1fr; }
-  .aw-sidebar { flex-direction: row; }
-  .aw-card--impact, .aw-card--funding { flex: 1; }
-  .aw-metrics { flex-direction: row; justify-content: space-around; }
+@media (max-width: 1100px) {
+  .aw-hero__container { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    gap: 3rem;
+  }
+  .aw-hero__line { margin: 0 auto 2rem; }
+  .aw-hero__text { margin: 0 auto; }
+  .aw-hero__trophy { max-width: 250px; }
+  .aw-hero__card { max-width: 450px; margin: 0 auto; }
 }
 
 @media (max-width: 992px) {
-  .aw-hero__container { flex-direction: column; text-align: center; }
-  .aw-hero__title::after { margin: 1rem auto 0; }
-  .aw-hero__visual { display: none; }
+  .aw-main__container { grid-template-columns: 1fr; }
   .aw-sidebar { flex-direction: column; }
 }
 

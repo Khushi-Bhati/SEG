@@ -22,15 +22,6 @@ export default function ChairmanLetter() {
             <img src={facultyBgImg} alt="Mr. Sunil Singh" className="chairman-letter__photo" />
           </div>
 
-          <div className="chairman-letter__nameplate">
-            <span className="chairman-letter__nameplate-icon">
-              <UserIcon />
-            </span>
-            <div className="chairman-letter__nameplate-copy">
-              <strong>Mr. Sunil Singh</strong>
-              <span>Chairman, Saroj Educational Group</span>
-            </div>
-          </div>
         </article>
 
         <article className="chairman-letter__content">

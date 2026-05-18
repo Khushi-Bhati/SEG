@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import aboutBg from '../assets/images/about-bg.png';
 import campusBg from '../assets/images/campus-bg.png';
 import facultyBg from '../assets/images/faculty-bg.png';
 import heroBg from '../assets/images/hero-bg.png';
-
+import logoImg from '../assets/images/logo.png';
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -84,6 +85,7 @@ const eventCards = [
     year: '2026',
     color: 'coral',
     image: facultyBg,
+    slug: 'enhancing-research-practices',
   },
   {
     title: 'Jashn-e-Riwayat: A Heartfelt Farewell Celebration Honoring Tradition and Legacy',
@@ -92,6 +94,7 @@ const eventCards = [
     year: '2026',
     color: 'mint',
     image: aboutBg,
+    slug: 'jashn-e-riwayat',
   },
   {
     title: 'INNOVATE BHARAT 2026: National Hackathon for Real-World Innovation',
@@ -100,6 +103,7 @@ const eventCards = [
     year: '2026',
     color: 'blue',
     image: heroBg,
+    slug: 'innovate-bharat-2026',
   },
   {
     title: 'Belliatus Cultura 2026 - 9th Northeast Cultural Fest',
@@ -108,6 +112,16 @@ const eventCards = [
     year: '2026',
     color: 'gold',
     image: campusBg,
+    slug: 'belliatus-cultura-2026',
+  },
+  {
+    title: 'Annual Sports Meet 2026 - Celebrating Excellence in Athletics',
+    day: '05',
+    month: 'Mar',
+    year: '2026',
+    color: 'coral',
+    image: heroBg,
+    slug: 'annual-sports-meet-2026',
   },
 ];
 
@@ -184,12 +198,12 @@ export default function HappeningsShowcase() {
             <span className="happenings-showcase__accent" />
           </div>
 
-          <button className="btn btn--primary happenings-showcase__cta" id="happenings-showcase-btn">
-            View all Institutions
+          <Link to="/institutions" className="btn btn--primary happenings-showcase__cta" id="happenings-showcase-btn">
+            View more
             <span className="btn__arrow">
               <ArrowRight />
             </span>
-          </button>
+          </Link>
         </div>
 
         <div className="happenings-showcase__events">
@@ -206,9 +220,9 @@ export default function HappeningsShowcase() {
 
               <div className="happenings-showcase__event-body">
                 <h3 className="happenings-showcase__event-title">{event.title}</h3>
-                <a href="#happenings-showcase" className="happenings-showcase__event-link" aria-label={event.title}>
+                <Link to={`/events/${event.slug}`} className="happenings-showcase__event-link" aria-label={event.title}>
                   <ArrowRight />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
@@ -270,7 +284,9 @@ export default function HappeningsShowcase() {
               </article>
             ))}
           </div>
+        </section>
 
+        <section className="happenings-showcase__cta-section">
           <article className="happenings-showcase__cta-panel">
             <span className="happenings-showcase__cta-rail happenings-showcase__cta-rail--left" aria-hidden="true" />
             <span className="happenings-showcase__cta-rail happenings-showcase__cta-rail--right" aria-hidden="true" />
@@ -290,7 +306,7 @@ export default function HappeningsShowcase() {
               </h3>
 
               <div className="happenings-showcase__cta-actions">
-                <a href="#happenings-showcase" className="btn btn--primary happenings-showcase__cta-button">
+                <a href="https://ssitm.in/" target="_blank" rel="noopener noreferrer" className="btn btn--primary happenings-showcase__cta-button">
                   Apply now
                   <span className="btn__arrow">
                     <ArrowRight />
@@ -310,6 +326,11 @@ export default function HappeningsShowcase() {
               <span className="happenings-showcase__building-block happenings-showcase__building-block--left" />
               <span className="happenings-showcase__building-block happenings-showcase__building-block--center" />
               <span className="happenings-showcase__building-block happenings-showcase__building-block--right" />
+            </div>
+
+            <div className="happenings-showcase__cta-badge">
+              <span className="happenings-showcase__cta-badge-text">Admission<br />open</span>
+              <img src={logoImg} alt="SEG Logo" className="happenings-showcase__cta-badge-logo" />
             </div>
           </article>
         </section>

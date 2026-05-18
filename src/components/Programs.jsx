@@ -1,41 +1,55 @@
+import React from 'react';
+import './Programs.css';
 import program1 from '../assets/images/program1.png';
 import program2 from '../assets/images/program2.png';
 import program3 from '../assets/images/program3.png';
 import program4 from '../assets/images/program4.png';
 
-const ArrowRight = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const topRow = [
+  { image: program1, title: 'Engineering & Technology', big: true },
+  { image: program2, title: 'Medical & Health Sciences', big: false },
+  { image: program1, title: 'Engineering & Technology', big: true },
+  { image: program2, title: 'Medical & Health Sciences', big: false },
+  { image: program1, title: 'Engineering & Technology', big: true },
+  { image: program2, title: 'Medical & Health Sciences', big: false },
+  { image: program1, title: 'Engineering & Technology', big: true },
+  { image: program2, title: 'Medical & Health Sciences', big: false },
+];
 
-const programs = [
-  { image: program1, title: 'Engineering & Technology' },
-  { image: program2, title: 'Medical & Health Sciences' },
-  { image: program3, title: 'Business & Management' },
-  { image: program4, title: 'Arts & Humanities' },
+const bottomRow = [
+  { image: program3, title: 'Business & Management', big: false },
+  { image: program4, title: 'Arts & Humanities', big: true },
+  { image: program3, title: 'Business & Management', big: false },
+  { image: program4, title: 'Arts & Humanities', big: true },
+  { image: program3, title: 'Business & Management', big: false },
+  { image: program4, title: 'Arts & Humanities', big: true },
+  { image: program3, title: 'Business & Management', big: false },
+  { image: program4, title: 'Arts & Humanities', big: true },
 ];
 
 export default function Programs() {
   return (
     <section className="programs" id="programs">
-      <div className="programs__shell">
-        <div className="section-header">
-          <div className="section-header__title-wrap">
-
+      {/* Top row — slides RIGHT */}
+      <div className="programs__track programs__track--right">
+        {topRow.map((p, i) => (
+          <div 
+            key={i} 
+            className={`programs__card ${p.big ? 'programs__card--big' : 'programs__card--small'}`}
+          >
+            <img src={p.image} alt={p.title} className="programs__image" />
           </div>
-
-        </div>
+        ))}
       </div>
 
-      <div className="programs__grid">
-        {programs.map((program, i) => (
-          <div
-            className={`programs__card programs__card--slot-${i + 1} ${i < 2 ? 'programs__card--float-right' : 'programs__card--float-left'}`}
-            key={i}
+      {/* Bottom row — slides LEFT */}
+      <div className="programs__track programs__track--left">
+        {bottomRow.map((p, i) => (
+          <div 
+            key={i} 
+            className={`programs__card ${p.big ? 'programs__card--big' : 'programs__card--small'}`}
           >
-            <img src={program.image} alt={program.title} />
-
+            <img src={p.image} alt={p.title} className="programs__image" />
           </div>
         ))}
       </div>

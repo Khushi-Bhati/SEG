@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import trophyImg from '../assets/images/trophy for awards.jpeg';
 import '../award-winning-projects.css';
 
 const AwardWinningProjects = () => {
@@ -38,15 +39,43 @@ const AwardWinningProjects = () => {
         <div className="aw-hero__container">
           <div className="aw-hero__content">
             <h1 className="aw-hero__title">Award-Winning Projects</h1>
+            <div className="aw-hero__line"></div>
             <p className="aw-hero__text">
               At Saroj Educational Group (SEG), our researchers have successfully undertaken numerous prestigious projects.
             </p>
           </div>
-          <div className="aw-hero__visual">
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M100 40V20M100 40C80 40 60 50 60 70V100C60 120 80 140 100 140C120 140 140 120 140 100V70C140 50 120 40 100 40ZM100 140V160M70 180H130M50 70C40 70 30 80 30 90V100C30 110 40 120 50 120M150 70C160 70 170 80 170 90V100C170 110 160 120 150 120" stroke="#2563eb" strokeWidth="6" strokeLinecap="round"/>
-              <path d="M100 15V25M155 45L145 55M175 100H185M155 155L145 145M100 185V175M45 155L55 145M25 100H15M45 45L55 55" stroke="#ffbe23" strokeWidth="4" strokeLinecap="round" opacity="0.6"/>
-            </svg>
+
+          <div className="aw-hero__center-visual">
+            <img src={trophyImg} alt="Awards Trophy" className="aw-hero__trophy" />
+          </div>
+
+          <div className="aw-hero__card">
+            <div className="aw-card--impact">
+              <h3 className="aw-card__title">Our Research Impact</h3>
+              <div className="aw-metrics">
+                <div className="aw-metric">
+                  <div className="aw-metric__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  </div>
+                  <span className="aw-metric__value">50+</span>
+                  <span className="aw-metric__label">Research Projects</span>
+                </div>
+                <div className="aw-metric">
+                  <div className="aw-metric__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <span className="aw-metric__value">30+</span>
+                  <span className="aw-metric__label">Expert Researchers</span>
+                </div>
+                <div className="aw-metric">
+                  <div className="aw-metric__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                  </div>
+                  <span className="aw-metric__value">15+</span>
+                  <span className="aw-metric__label">Awards Won</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -95,35 +124,6 @@ const AwardWinningProjects = () => {
 
           {/* Right Column - Sidebar */}
           <aside className="aw-sidebar">
-            <div className="aw-card--impact">
-              <h3 className="aw-card__title">Our Research Impact</h3>
-              <div className="aw-metrics">
-                <div className="aw-metric">
-                  <div className="aw-metric__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  </div>
-                  <span className="aw-metric__value">50+</span>
-                  <span className="aw-metric__label">Research Projects</span>
-                </div>
-
-                <div className="aw-metric">
-                  <div className="aw-metric__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                  </div>
-                  <span className="aw-metric__value">30+</span>
-                  <span className="aw-metric__label">Expert Researchers</span>
-                </div>
-
-                <div className="aw-metric">
-                  <div className="aw-metric__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-                  </div>
-                  <span className="aw-metric__value">15+</span>
-                  <span className="aw-metric__label">Awards Won</span>
-                </div>
-              </div>
-            </div>
-
             <div className="aw-card--funding">
               <div className="aw-funding__header">
                 <div className="aw-funding__icon">

@@ -1,9 +1,11 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import program1 from '../assets/images/program1.png';
 import program2 from '../assets/images/program2.png';
 import program3 from '../assets/images/program3.png';
 import program4 from '../assets/images/program4.png';
+import booksImg from '../assets/images/booksimg.jpeg';
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,6 +46,16 @@ const DiplomaIcon = () => (
     <path d="M4 7.5C4 6.7 4.7 6 5.5 6H18.5C19.3 6 20 6.7 20 7.5V14.5C20 15.3 19.3 16 18.5 16H5.5C4.7 16 4 15.3 4 14.5V7.5Z" stroke="currentColor" strokeWidth="1.8" />
     <path d="M8 11H16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     <path d="M17 16L19 21L16.5 20L15 22L13.5 18.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const LawIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 5V19" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M7 8H17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M7 8L4 13H10L7 8Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M17 8L14 13H20L17 8Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M5 19H19" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
 
@@ -92,35 +104,54 @@ const programCards = [
     description: 'B.Tech programs with modern specializations and hands-on learning.',
     image: program1,
     color: 'blue',
+    accentColor: '#1f63db',
+    slug: 'mtech',
     icon: <GearIcon />,
   },
   {
     title: 'Management Programs',
-    description: 'MBA and BBA programs to nurture future business leaders.',
+    description: 'MBA & BBA programs to nurture future business leaders.',
     image: program2,
     color: 'green',
+    accentColor: '#6cbf46',
+    slug: 'mba',
     icon: <BagIcon />,
   },
   {
     title: 'Computer Applications',
-    description: 'BCA and MCA programs focused on digital tools and innovation.',
+    description: 'BCA, MCA & innovative programs in computer applications.',
     image: program3,
     color: 'violet',
+    accentColor: '#6a32df',
+    slug: 'bca',
     icon: <CodeIcon />,
   },
   {
     title: 'Diploma Programs',
-    description: 'Industry-focused diploma programs designed for skill enhancement.',
+    description: 'Industry-focused diploma programs for skill enhancement.',
     image: program4,
     color: 'orange',
+    accentColor: '#ff8b1a',
+    slug: 'diploma',
     icon: <DiplomaIcon />,
   },
   {
     title: 'Pharmacy Programs',
-    description: 'D.Pharm and B.Pharm pathways for a bright career in healthcare.',
+    description: 'D.Pharm & B.Pharm programs for a bright career in healthcare.',
     image: program2,
     color: 'cyan',
+    accentColor: '#27c6d8',
+    slug: 'bpharm',
     icon: <FlaskIcon />,
+  },
+  {
+    title: 'Law Programs',
+    description: 'LLB programs to build legal expertise and professional excellence.',
+    image: program3,
+    color: 'rose',
+    accentColor: '#e11d48',
+    slug: 'law',
+    icon: <LawIcon />,
   },
 ];
 
@@ -149,6 +180,7 @@ const programBenefits = [
 
 export default function ProgramsSpotlight() {
   const carouselRef = useRef(null);
+  const navigate = useNavigate();
 
   const scrollCards = (direction) => {
     if (!carouselRef.current) {
@@ -166,7 +198,7 @@ export default function ProgramsSpotlight() {
   };
 
   return (
-    <section className="programs-spotlight" id="programs-spotlight">
+    <section className="programs-spotlight" id="programs-spotlight" style={{ background: '#ffffff' }}>
       <div className="programs-spotlight__shell">
         <div className="programs-spotlight__hero">
           <div className="programs-spotlight__intro">
@@ -187,26 +219,18 @@ export default function ProgramsSpotlight() {
           </div>
 
           <div className="programs-spotlight__actions">
-            <button className="btn btn--primary programs-spotlight__cta" id="programs-spotlight-btn">
+            <button
+              className="btn btn--primary programs-spotlight__cta"
+              onClick={() => navigate('/faculty')}
+            >
               View All Programs
-              <span className="btn__arrow">
-                <ArrowRight />
-              </span>
+              <span className="btn__arrow"><ArrowRight /></span>
             </button>
           </div>
 
           <div className="programs-spotlight__art" aria-hidden="true">
             <span className="programs-spotlight__orb programs-spotlight__orb--gold" />
-            <span className="programs-spotlight__dots" />
-            <div className="programs-spotlight__book-stack">
-              <div className="programs-spotlight__cap">
-                <span className="programs-spotlight__cap-top" />
-                <span className="programs-spotlight__cap-tassel" />
-              </div>
-              <div className="programs-spotlight__book programs-spotlight__book--gold" />
-              <div className="programs-spotlight__book programs-spotlight__book--white" />
-              <div className="programs-spotlight__book programs-spotlight__book--blue" />
-            </div>
+            <img src={booksImg} alt="Academic Books" className="programs-spotlight__art-img" />
           </div>
         </div>
 
@@ -226,6 +250,8 @@ export default function ProgramsSpotlight() {
                 <article
                   className={`programs-spotlight__card programs-spotlight__card--${card.color}`}
                   key={card.title}
+                  onClick={() => navigate(`/programs/${card.slug}`)}
+                  style={{ cursor: 'pointer' }}
                 >
                   <div className="programs-spotlight__card-icon">{card.icon}</div>
                   <img
@@ -237,12 +263,12 @@ export default function ProgramsSpotlight() {
                   <h3 className="programs-spotlight__card-title">{card.title}</h3>
                   <span className="programs-spotlight__card-line" />
                   <p className="programs-spotlight__card-description">{card.description}</p>
-                  <a href="#programs" className="programs-spotlight__card-link">
+                  <span className="programs-spotlight__card-link">
                     Explore
                     <span className="programs-spotlight__card-link-arrow">
                       <ArrowRight />
                     </span>
-                  </a>
+                  </span>
                 </article>
               ))}
             </div>
