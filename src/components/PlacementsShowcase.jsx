@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import placementsBg from '../assets/images/placements-bg.png';
 import program1 from '../assets/images/surender pratap.jpeg';
 import program2 from '../assets/images/shaloni devi.jpeg';
-import program3 from '../assets/images/pramudit shukla.jpeg';
+import program3 from '../assets/images/Pramudit Shukla.jpeg';
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

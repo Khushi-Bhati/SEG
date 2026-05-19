@@ -5,7 +5,7 @@ import logoImg from '../assets/images/logo.png';
 
 // Placeholder images for students, since we don't have the real ones
 import program1 from '../assets/images/Priya Yadva.jpg';
-import program2 from '../assets/images/Harsh Dixit.jpeg';
+import program2 from '../assets/images/Harsh dixit.jpeg';
 import program3 from '../assets/images/mansi sahu.jpeg';
 import program4 from '../assets/images/surender pratap.jpeg';
 import program5 from '../assets/images/pranjali singh.jpeg';
