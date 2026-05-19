@@ -8,9 +8,7 @@ export default function ChairmanHero() {
       <div className="chairman-hero__shell">
         <div className="chairman-hero__copy">
           <div className="chairman-hero__breadcrumbs">
-            <Link to="/">Home</Link>
-            <span className="separator">&gt;</span>
-            <span>About SEG</span>
+
             <span className="separator">&gt;</span>
             <span className="current">Chairman&apos;s Message</span>
           </div>

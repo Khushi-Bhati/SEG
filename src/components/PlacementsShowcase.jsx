@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import placementsBg from '../assets/images/placements-bg.png';
-import program1 from '../assets/images/program1.png';
-import program2 from '../assets/images/program2.png';
-import program3 from '../assets/images/program3.png';
+import program1 from '../assets/images/surender pratap.jpeg';
+import program2 from '../assets/images/shaloni devi.jpeg';
+import program3 from '../assets/images/pramudit shukla.jpeg';
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,11 +61,11 @@ const BriefcaseIcon = () => (
 
 const successCards = [
   {
-    name: 'Umesh Mishra',
+    name: 'surender pratap',
     course: 'B.Tech CSE 4th Year',
-    packageLabel: '10.00 LPA',
-    company: 'Square IT Solutions Pvt. Ltd.',
-    role: 'Web Developer',
+    packageLabel: '4.00 LPA',
+    company: 'Eclat Health Solution India',
+    role: 'Software Developer',
     image: program1,
     logo: 'SQUAREIT',
   },
@@ -98,38 +98,38 @@ const placementStats = [
 
 const CognizantLogo = () => (
   <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" width="110" height="36">
-    <circle cx="20" cy="20" r="14" fill="#0033a0"/>
-    <path d="M20 10 a10 10 0 0 0 0 20" fill="none" stroke="white" strokeWidth="3"/>
+    <circle cx="20" cy="20" r="14" fill="#0033a0" />
+    <path d="M20 10 a10 10 0 0 0 0 20" fill="none" stroke="white" strokeWidth="3" />
     <text x="38" y="25" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="#0033a0">Cognizant</text>
   </svg>
 );
 
 const AccentureLogo = () => (
   <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" width="110" height="36">
-    <polygon points="55,6 65,6 60,16" fill="#a100ff"/>
+    <polygon points="55,6 65,6 60,16" fill="#a100ff" />
     <text x="10" y="30" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="#000">accenture</text>
   </svg>
 );
 
 const AonLogo = () => (
   <svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg" width="70" height="36">
-    <rect width="80" height="40" fill="#cc0000" rx="4"/>
+    <rect width="80" height="40" fill="#cc0000" rx="4" />
     <text x="50%" y="27" textAnchor="middle" fontFamily="Arial" fontWeight="bold" fontSize="20" fill="white">Aon</text>
   </svg>
 );
 
 const AsianPaintsLogo = () => (
   <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" width="120" height="36">
-    <circle cx="18" cy="20" r="13" fill="#e31e24"/>
-    <circle cx="18" cy="20" r="7" fill="#f7941d"/>
-    <circle cx="18" cy="20" r="3" fill="white"/>
+    <circle cx="18" cy="20" r="13" fill="#e31e24" />
+    <circle cx="18" cy="20" r="7" fill="#f7941d" />
+    <circle cx="18" cy="20" r="3" fill="white" />
     <text x="36" y="25" fontFamily="Arial" fontWeight="bold" fontSize="12" fill="#e31e24">Asian Paints</text>
   </svg>
 );
 
 const CMCLogo = () => (
   <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" width="110" height="36">
-    <rect width="120" height="40" fill="#003087" rx="4"/>
+    <rect width="120" height="40" fill="#003087" rx="4" />
     <text x="50%" y="26" textAnchor="middle" fontFamily="Arial" fontWeight="bold" fontSize="14" fill="white">CMC Limited</text>
   </svg>
 );
@@ -149,17 +149,17 @@ const GoogleLogo = () => (
 
 const HDFCLogo = () => (
   <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" width="120" height="36">
-    <rect width="130" height="40" fill="#004C8F" rx="4"/>
+    <rect width="130" height="40" fill="#004C8F" rx="4" />
     <text x="50%" y="26" textAnchor="middle" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="white">HDFC BANK</text>
   </svg>
 );
 
 const MicrosoftLogo = () => (
   <svg viewBox="0 0 130 40" xmlns="http://www.w3.org/2000/svg" width="120" height="36">
-    <rect x="0" y="4" width="14" height="14" fill="#F25022"/>
-    <rect x="16" y="4" width="14" height="14" fill="#7FBA00"/>
-    <rect x="0" y="20" width="14" height="14" fill="#00A4EF"/>
-    <rect x="16" y="20" width="14" height="14" fill="#FFB900"/>
+    <rect x="0" y="4" width="14" height="14" fill="#F25022" />
+    <rect x="16" y="4" width="14" height="14" fill="#7FBA00" />
+    <rect x="0" y="20" width="14" height="14" fill="#00A4EF" />
+    <rect x="16" y="20" width="14" height="14" fill="#FFB900" />
     <text x="36" y="26" fontFamily="Arial" fontSize="13" fill="#737373">Microsoft</text>
   </svg>
 );
@@ -178,7 +178,7 @@ const NIITLogo = () => (
 const TCSLogo = () => (
   <svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg" width="70" height="36">
     <text x="0" y="30" fontFamily="Arial" fontWeight="bold" fontSize="24" fill="#f15a22">TCS</text>
-    <line x1="0" y1="33" x2="52" y2="33" stroke="#002b5c" strokeWidth="2"/>
+    <line x1="0" y1="33" x2="52" y2="33" stroke="#002b5c" strokeWidth="2" />
   </svg>
 );
 

@@ -653,7 +653,14 @@ export default function Navbar() {
                   <button
                     type="button"
                     className="navbar__item-button"
-                    onClick={() => setActiveDropdown(open => open === item.label ? null : item.label)}
+                    onClick={() => {
+                      console.log("Mobile Navbar Item Clicked:", item.label);
+                      setActiveDropdown(open => {
+                        const next = open === item.label ? null : item.label;
+                        console.log("Next Dropdown State:", next);
+                        return next;
+                      });
+                    }}
                     aria-expanded={activeDropdown === item.label}
                   >
                     <span className="navbar__item-text">{item.label}</span>

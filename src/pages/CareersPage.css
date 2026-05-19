@@ -820,20 +820,20 @@
   }
 
   .careers-hero__info-card {
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 20px);
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
     max-width: none;
     padding: 16px;
-    margin: 0;
+    margin: 20px 0 0;
   }
 
   /* Categories */
   .careers-categories {
-    padding: 50px 4% 20px;
-    margin-top: 50px;
+    padding: 30px 4% 20px;
+    margin-top: 0;
   }
 
   .categories-grid {

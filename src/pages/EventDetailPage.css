@@ -368,7 +368,7 @@
 
 @media (max-width: 768px) {
   .event-detail {
-    padding-top: 80px;
+    padding-top: 20px;
   }
   .event-detail__sidebar {
     grid-template-columns: 1fr;
@@ -397,6 +397,9 @@
 }
 
 @media (max-width: 480px) {
+  .event-detail {
+    padding-top: 10px;
+  }
   .event-detail__container {
     padding: 0 10px;
   }

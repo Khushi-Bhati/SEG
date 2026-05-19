@@ -1,7 +1,10 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import aboutBg from '../assets/images/about-bg.png';
-import facultyBg from '../assets/images/faculty-bg.png';
+import placement1 from '../assets/images/surender pratap.jpeg';
+import placement2 from '../assets/images/mansi sahu.jpeg';
+import placement3 from '../assets/images/Harsh dixit.jpeg';
+import placement4 from '../assets/images/surender pratap.jpeg';
 import institutionsBg from '../assets/images/institutions-bg.png';
 import campusBg from '../assets/images/campus-bg.png';
 
@@ -82,7 +85,7 @@ const tabs = [
 ];
 
 const facultyCards = [
-  { name: 'Prof. (Dr.) Anviti Gupta', role: 'Professor & Dean', school: 'Sharda School of Humanities & Social Sciences', image: facultyBg, tone: 'cyan' },
+  { name: 'Prof. (Dr.) Anviti Gupta', role: 'Professor & Dean', school: 'Sharda School of Humanities & Social Sciences', image: placement1, tone: 'cyan' },
   { name: 'Prof. Prem Kumar Malhotra', role: 'Professor', school: 'Sharda School of Law', image: aboutBg, tone: 'gold' },
   { name: 'Prof. (Dr.) Debasis Mallik', role: 'Dean', school: 'Sharda School of Business Studies', image: institutionsBg, tone: 'blue' },
   { name: 'Prof. (Dr.) Hrishikesh Dave', role: 'Dean', school: 'Sharda School of Law', image: campusBg, tone: 'violet' },
@@ -96,10 +99,10 @@ const awardsCards = [
 ];
 
 const storiesCards = [
-  { name: 'Rahul Sharma', batch: 'B.Tech CSE 2020', company: 'Google', role: 'Software Engineer', package: '32 LPA', image: facultyBg, tone: 'cyan' },
-  { name: 'Priya Singh', batch: 'MBA 2021', company: 'McKinsey & Co.', role: 'Business Analyst', package: '28 LPA', image: aboutBg, tone: 'gold' },
-  { name: 'Amit Kumar', batch: 'B.Pharm 2019', company: 'Sun Pharma', role: 'Research Scientist', package: '18 LPA', image: institutionsBg, tone: 'blue' },
-  { name: 'Neha Gupta', batch: 'LLB 2022', company: 'Cyril Amarchand', role: 'Associate Lawyer', package: '22 LPA', image: campusBg, tone: 'violet' },
+  { name: 'surender pratap', batch: 'B.Tech CSE 2020', company: 'Black Apple Technologies', role: 'Software Engineer', package: '6 LPA', image: placement1, tone: 'cyan' },
+  { name: 'Mansi Sahu', batch: 'MBA 2021', company: 'McKinsey & Co.', role: 'Business Analyst', package: '28 LPA', image: placement2, tone: 'gold' },
+  { name: 'Harsh Dixit', batch: 'B.Pharm 2019', company: 'Sun Pharma', role: 'Research Scientist', package: '18 LPA', image: placement3, tone: 'blue' },
+  { name: 'Surender pratap', batch: 'LLB 2022', company: 'Cyril Amarchand', role: 'Associate Lawyer', package: '22 LPA', image: placement4, tone: 'violet' },
 ];
 
 const toneAccent = { cyan: '#1fb7e2', gold: '#ffbe23', blue: '#1f63db', violet: '#9a43f0' };

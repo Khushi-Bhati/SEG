@@ -4,9 +4,15 @@ import '../PlacementsPage.css';
 import logoImg from '../assets/images/logo.png';
 
 // Placeholder images for students, since we don't have the real ones
-import program1 from '../assets/images/program1.png';
-import program2 from '../assets/images/program2.png';
-import program3 from '../assets/images/program3.png';
+import program1 from '../assets/images/Priya Yadva.jpg';
+import program2 from '../assets/images/Harsh Dixit.jpeg';
+import program3 from '../assets/images/mansi sahu.jpeg';
+import program4 from '../assets/images/surender pratap.jpeg';
+import program5 from '../assets/images/pranjali singh.jpeg';
+import program6 from '../assets/images/shivam yadav.jpeg';
+import program7 from '../assets/images/shaloni devi.jpeg';
+import program8 from '../assets/images/Pramudit Shukla.jpeg';
+import program9 from '../assets/images/vinay singh.jpg';
 import heroBg from '../assets/images/placementsimg.jpeg';
 
 const studentsData = [
@@ -47,7 +53,7 @@ const studentsData = [
     date: '29/04/2025',
     course: 'B Pharma',
     package: '₹4 LPA',
-    image: program1,
+    image: program4,
     logoText: 'ECLAT',
   },
   {
@@ -57,7 +63,7 @@ const studentsData = [
     date: '29/04/2025',
     course: 'B Pharma',
     package: '₹4 LPA',
-    image: program2,
+    image: program5,
     logoText: 'ECLAT',
   },
   {
@@ -67,12 +73,160 @@ const studentsData = [
     date: '08/04/2025',
     course: 'Diploma Electrical',
     package: '₹4 LPA',
-    image: program3,
+    image: program6,
     logoText: 'SUN SHAPER',
+  },
+  {
+    name: 'Shaloni Devi',
+    company: 'Max Healthcare',
+    role: 'Executive',
+    date: '10/05/2025',
+    course: 'B.Pharm',
+    package: '₹18 LPA',
+    image: program7,
+    logoText: 'MAX',
+  },
+  {
+    name: 'Pramudit Shukla',
+    company: 'TechMech',
+    role: 'Full Stack Developer',
+    date: '15/05/2025',
+    course: 'Diploma in CSE',
+    package: '₹12 LPA',
+    image: program8,
+    logoText: 'TECHMECH',
+  },
+  {
+    name: 'Vinay Singh',
+    company: 'TCS',
+    role: 'Software Engineer',
+    date: '20/04/2025',
+    course: 'B.Tech (CS)',
+    package: '₹5 LPA',
+    image: program9,
+    logoText: 'TCS',
+  },
+  {
+    name: 'Ananya Sharma',
+    company: 'Cognizant',
+    role: 'QA Analyst',
+    date: '18/04/2025',
+    course: 'B.Tech (IT)',
+    package: '₹4.5 LPA',
+    image: program3,
+    logoText: 'COGNIZANT',
+  },
+  {
+    name: 'Rohan Gupta',
+    company: 'Accenture',
+    role: 'Associate Developer',
+    date: '22/04/2025',
+    course: 'B.Tech (ECE)',
+    package: '₹4.2 LPA',
+    image: program4,
+    logoText: 'ACCENTURE',
+  },
+  {
+    name: 'Kriti Verma',
+    company: 'NIIT Technologies',
+    role: 'Software Trainee',
+    date: '05/05/2025',
+    course: 'B.Tech (CS)',
+    package: '₹3.6 LPA',
+    image: program5,
+    logoText: 'NIIT',
+  },
+  {
+    name: 'Siddharth Malhotra',
+    company: 'Microsoft',
+    role: 'Support Engineer',
+    date: '01/05/2025',
+    course: 'B.Tech (CS)',
+    package: '₹10 LPA',
+    image: program6,
+    logoText: 'MICROSOFT',
+  },
+  {
+    name: 'Pooja Mishra',
+    company: 'HDFC Bank',
+    role: 'Relationship Manager',
+    date: '12/04/2025',
+    course: 'MBA (Finance)',
+    package: '₹4.8 LPA',
+    image: program1,
+    logoText: 'HDFC BANK',
+  },
+  {
+    name: 'Abhishek Tiwari',
+    company: 'Google',
+    role: 'Cloud Engineer',
+    date: '28/04/2025',
+    course: 'B.Tech (CS)',
+    package: '₹15 LPA',
+    image: program8,
+    logoText: 'GOOGLE',
+  },
+  {
+    name: 'Aarti Rajput',
+    company: 'Aon Hewitt',
+    role: 'Data Analyst',
+    date: '14/05/2025',
+    course: 'B.Tech (CS)',
+    package: '₹6.5 LPA',
+    image: program7,
+    logoText: 'AON',
+  },
+  {
+    name: 'Sandeep Maurya',
+    company: 'Asian Paints',
+    role: 'Senior Executive',
+    date: '19/04/2025',
+    course: 'B.Tech (ME)',
+    package: '₹5.5 LPA',
+    image: program9,
+    logoText: 'ASIAN PAINTS',
+  },
+  {
+    name: 'Divya Joshi',
+    company: 'CMC Limited',
+    role: 'Systems Consultant',
+    date: '30/04/2025',
+    course: 'B.Tech (CS)',
+    package: '₹4 LPA',
+    image: program2,
+    logoText: 'CMC',
   },
 ];
 
 const PlacementsPage = () => {
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const cardsPerPage = 6;
+  const totalPages = Math.ceil(studentsData.length / cardsPerPage);
+
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = studentsData.slice(indexOfFirstCard, indexOfLastCard);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+      const section = document.querySelector('.placements-breadcrumb-wrapper');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      const section = document.querySelector('.placements-breadcrumb-wrapper');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <div className="placements-page">
       {/* HERO SECTION */}
@@ -133,7 +287,7 @@ const PlacementsPage = () => {
       <section className="placements-main">
         <div className="placements-container">
           <div className="placements-grid">
-            {studentsData.map((student, index) => (
+            {currentCards.map((student, index) => (
               <div className="placement-card" key={index}>
                 <div className="placement-card__image-container">
                   <img src={student.image} alt={student.name} className="placement-card__image" />
@@ -209,15 +363,25 @@ const PlacementsPage = () => {
           </div>
 
           {/* PAGINATION */}
-          <div className="placements-pagination">
-            <button className="placements-pagination__btn placements-pagination__btn--prev">
-              &lt; Prev
-            </button>
-            <span className="placements-pagination__text">1 / 3</span>
-            <button className="placements-pagination__btn placements-pagination__btn--next">
-              Next &gt;
-            </button>
-          </div>
+          {totalPages > 1 && (
+            <div className="placements-pagination">
+              <button 
+                className="placements-pagination__btn placements-pagination__btn--prev"
+                onClick={handlePrevPage}
+                disabled={currentPage === 1}
+              >
+                &lt; Prev
+              </button>
+              <span className="placements-pagination__text">{currentPage} / {totalPages}</span>
+              <button 
+                className="placements-pagination__btn placements-pagination__btn--next"
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+              >
+                Next &gt;
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>

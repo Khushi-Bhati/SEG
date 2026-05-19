@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 import '../ExploreMore.css';
 import aboutBgImg from '../assets/images/about-bg.png';
-import campusBgImg from '../assets/images/campus-bg.png';
+import campusBgImg from '../assets/images/seg.jpeg';
 import facultyBgImg from '../assets/images/faculty-bg.png';
-import exploreHeroImg from '../assets/images/explore-hero.png';
+import exploreHeroImg from '../assets/images/seg.jpeg';
 import placementsBgImg from '../assets/images/placements-bg.png';
 import institutionsBgImg from '../assets/images/institutions-bg.png';
+import computerlab from '../assets/images/computer-lab5.webp';
+import computerlab4 from '../assets/images/computer-lab5.webp';
+import transport from '../assets/images/transport1.webp'
+import library from '../assets/images/library5.webp'
+import library2 from '../assets/images/library5.webp'
+import building2 from '../assets/images/building1.webp'
+import library4 from '../assets/images/library4.webp'
+import sports from '../assets/images/sports-meet-10.webp'
+import library3 from '../assets/images/library1 (2).webp'
+import lib4 from '../assets/images/library3.webp'
+import workshop from '../assets/images/computer-lab3.webp'
+
 
 const filters = [
   { id: 'all', label: 'All Moments', icon: 'grid' },
@@ -31,70 +43,70 @@ const galleryItems = [
     category: 'campus',
     label: 'Our Campus',
     title: 'Main Academic Block',
-    image: campusBgImg,
+    image: building2,
   },
   {
     id: 3,
     category: 'library',
     label: 'Library Moments',
     title: 'Resource Center',
-    image: aboutBgImg,
+    image: library2,
   },
   {
     id: 4,
     category: 'students',
     label: 'Student Life',
     title: 'Vibrant Community',
-    image: placementsBgImg,
+    image: library3,
   },
   {
     id: 5,
     category: 'students',
     label: 'Learning & Growth',
     title: 'Innovative Labs',
-    image: facultyBgImg,
+    image: library4,
   },
   {
     id: 6,
     category: 'library',
     label: 'Knowledge Hub',
     title: 'Peaceful Study Zone',
-    image: institutionsBgImg,
+    image: library,
   },
   {
     id: 7,
     category: 'facilities',
     label: 'Computer Labs',
     title: 'High-Tech Infrastructure',
-    image: campusBgImg,
+    image: computerlab,
   },
   {
     id: 8,
     category: 'facilities',
     label: 'Modern Classroom',
     title: 'Smart Learning Space',
-    image: aboutBgImg,
+    image: lib4,
   },
   {
     id: 9,
     category: 'events',
     label: 'Workshop',
     title: 'Skill Development',
-    image: facultyBgImg,
+    image: workshop,
   },
   {
     id: 10,
     category: 'campus',
     label: 'Transport',
     title: 'Our Bus Fleet',
-    image: institutionsBgImg,
+    image: transport,
   },
   {
     id: 11,
     category: 'campus',
     label: 'Campus Aerial',
     title: 'Green Surroundings',
-    image: placementsBgImg,
+    image: sports,
   }
 ];
 
@@ -141,8 +153,8 @@ const Icon = ({ type }) => {
 const ExploreMore = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const filteredItems = activeFilter === 'all' 
-    ? galleryItems 
+  const filteredItems = activeFilter === 'all'
+    ? galleryItems
     : galleryItems.filter(item => item.category === activeFilter);
 
   return (
@@ -175,8 +187,8 @@ const ExploreMore = () => {
         {/* Gallery Grid */}
         <main className="explore-gallery">
           {filteredItems.map(item => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className={`gallery-item ${item.type || ''}`}
             >
               <img src={item.image} alt={item.title} />

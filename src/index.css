@@ -278,11 +278,11 @@ button {
 
 .navbar__mobile-subitem {
   display: flex !important;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start !important;
+  gap: 12px;
   width: 100%;
   padding: 12px 20px 12px 36px;
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 500;
   color: #1041c6;
   text-decoration: none;
@@ -290,6 +290,14 @@ button {
   background: #f0f5ff;
   cursor: pointer;
   transition: background 0.15s;
+}
+
+.navbar__mobile-subitem span:not(.navbar__mobile-subitem-icon) {
+  flex: 1;
+  min-width: 0;
+  white-space: normal !important;
+  line-height: 1.4;
+  word-break: break-word;
 }
 
 .navbar__mobile-subitem:hover {

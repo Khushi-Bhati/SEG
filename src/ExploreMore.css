@@ -289,6 +289,10 @@
 }
 
 @media (max-width: 768px) {
+  .explore-more {
+    padding-top: 4rem;
+  }
+
   .explore-title {
     font-size: 2.5rem;
   }
@@ -304,6 +308,10 @@
 }
 
 @media (max-width: 500px) {
+  .explore-more {
+    padding-top: 3rem;
+  }
+
   .explore-gallery {
     grid-template-columns: 1fr;
     grid-auto-rows: 300px;
@@ -315,5 +323,23 @@
   
   .stat-item {
     min-width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .explore-more {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .explore-more {
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .explore-more {
+    padding-top: 1rem;
   }
 }

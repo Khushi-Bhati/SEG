@@ -1,5 +1,5 @@
-import aboutBgImg from '../../assets/images/about-bg.png';
-import campusBgImg from '../../assets/images/campus-bg.png';
+import aboutBgImg from '../../assets/images/shivdan.jpg';
+import campusBgImg from '../../assets/images/building1.webp';
 
 const milestones = [
   {

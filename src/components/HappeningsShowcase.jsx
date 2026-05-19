@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import aboutBg from '../assets/images/about-bg.png';
-import campusBg from '../assets/images/campus-bg.png';
-import facultyBg from '../assets/images/faculty-bg.png';
-import heroBg from '../assets/images/hero-bg.png';
+import aboutBg from '../assets/images/hapen2.jpeg';
+import campusBg from '../assets/images/eventImg9.jpeg';
+import facultyBg from '../assets/images/hapen1.jpeg';
+import heroBg from '../assets/images/HappeningsImage1.jpg';
+import event from '../assets/images/sports-meet-10.jpeg';
 import logoImg from '../assets/images/logo.png';
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +121,7 @@ const eventCards = [
     month: 'Mar',
     year: '2026',
     color: 'coral',
-    image: heroBg,
+    image: event,
     slug: 'annual-sports-meet-2026',
   },
 ];

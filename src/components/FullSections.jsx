@@ -1,8 +1,8 @@
-import aboutBg from '../assets/images/about-bg.png';
+import aboutBg from '../assets/images/saroj institue.jpeg';
 import campusBg from '../assets/images/seg.jpeg';
-import heroBg from '../assets/images/hero-bg.png';
-import institutionsBg from '../assets/images/institutions-bg.png';
-import placementsBg from '../assets/images/placements-bg.png';
+import heroBg from '../assets/images/ssitm.jpeg';
+import institutionsBg from '../assets/images/college of law.avif';
+import placementsBg from '../assets/images/pharmacy.jpg';
 
 const ArrowRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,10 +12,10 @@ const ArrowRight = () => (
 
 const BuildingIcon = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2L4 5V11C4 16.5 7.5 21.5 12 23C16.5 21.5 20 16.5 20 11V5L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M9 14V17M12 14V17M15 14V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M8 10H16V12H8V10Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M10 7H14V9H10V7Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 2L4 5V11C4 16.5 7.5 21.5 12 23C16.5 21.5 20 16.5 20 11V5L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M9 14V17M12 14V17M15 14V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8 10H16V12H8V10Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10 7H14V9H10V7Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
