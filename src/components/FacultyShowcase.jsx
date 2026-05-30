@@ -101,11 +101,11 @@ const tabs = [
 ];
 
 const facultyCards = [
-  { name: 'Prof. (Dr.) Anviti Gupta', role: 'Professor & Dean', school: 'Shivdan Singh Institute of Technology and Management', image: faculty1, tone: 'cyan' },
-  { name: 'Prof. Prem Kumar Malhotra', role: 'Professor', school: 'Saroj Institute of Technology and Management', image: faculty2, tone: 'gold' },
-  { name: 'Prof. (Dr.) Debasis Mallik', role: 'Dean', school: 'Saroj College of Law', image: faculty3, tone: 'blue' },
-  { name: 'Prof. (Dr.) Hrishikesh Dave', role: 'Dean', school: 'Saroj College of Law', image: faculty4, tone: 'violet' },
-  { name: 'Prof. (Dr.) Rajeev Kumar', role: 'Professor & Dean', school: 'Saroj College of Pharmacy', image: faculty5, tone: 'cyan' },
+  { id: 1, name: 'Prof. (Dr.) Anviti Gupta', role: 'Professor & Dean', school: 'Shivdan Singh Institute of Technology and Management', image: faculty1, tone: 'cyan' },
+  { id: 2, name: 'Prof. Prem Kumar Malhotra', role: 'Professor', school: 'Saroj Institute of Technology and Management', image: faculty2, tone: 'gold' },
+  { id: 3, name: 'Prof. (Dr.) Debasis Mallik', role: 'Dean', school: 'Saroj College of Law', image: faculty3, tone: 'blue' },
+  { id: 4, name: 'Prof. (Dr.) Hrishikesh Dave', role: 'Dean', school: 'Saroj College of Law', image: faculty4, tone: 'violet' },
+  { id: 5, name: 'Prof. (Dr.) Rajeev Kumar', role: 'Professor & Dean', school: 'Saroj College of Pharmacy', image: faculty5, tone: 'cyan' },
 ];
 
 const awardsCards = [
@@ -180,7 +180,7 @@ export default function FacultyShowcase() {
           <div className="faculty-showcase__actions">
             <span className="faculty-showcase__dots" aria-hidden="true" />
             {activeTab === 'Top Faculties' && (
-              <button className="btn btn--primary faculty-showcase__cta" onClick={() => navigate('/faculties')}>
+              <button className="btn btn--primary faculty-showcase__cta" onClick={() => navigate('/faculty-new')}>
                 <span className="faculty-showcase__cta-icon"><UsersIcon /></span>
                 View all Faculties
                 <ArrowRight />
@@ -224,7 +224,7 @@ export default function FacultyShowcase() {
                     </div>
                   </div>
                   <div className="faculty-showcase__card-footer">
-                    <span className="faculty-showcase__card-arrow">
+                    <span className="faculty-showcase__card-arrow" style={{ cursor: 'pointer' }} onClick={() => navigate(`/faculty/${faculty.id}`)}>
                       <ArrowRight />
                     </span>
                   </div>

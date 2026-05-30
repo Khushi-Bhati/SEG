@@ -24,6 +24,10 @@ import ProgramDetailPage from './pages/ProgramDetailPage'
 import PayFeePage from './pages/PayFeePage'
 import StudentNoticePage from './pages/StudentNoticePage'
 import FacultyNewPage from './pages/FacultyNewPage'
+import FacultyProfilePage from './pages/FacultyProfilePage'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsAndConditions from './pages/TermsAndConditions'
+import JobApplicationPage from './pages/JobApplicationPage'
 import InstitutionsPage from './pages/InstitutionsPage'
 import CareersPage from './pages/CareersPage'
 import EventDetailPage from './pages/EventDetailPage'
@@ -71,11 +75,15 @@ function App() {
         <Route path="/research-publications" element={<ResearchPublications />} />
         <Route path="/all-programs" element={<FacultyPage />} />
         <Route path="/faculty-new" element={<FacultyNewPage />} />
+        <Route path="/faculty/:id" element={<FacultyProfilePage />} />
         <Route path="/pay-fee" element={<PayFeePage />} />
         <Route path="/student-notice" element={<StudentNoticePage />} />
         <Route path="/institutions" element={<InstitutionsPage />} />
         <Route path="/careers" element={<CareersPage />} />
+        <Route path="/careers/apply" element={<JobApplicationPage />} />
         <Route path="/events/:slug" element={<EventDetailPage />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
       <Chatbot />

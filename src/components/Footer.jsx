@@ -277,9 +277,9 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <p>&copy; {new Date().getFullYear()} Saroj Education Group. All Rights Reserved.</p>
-        <div className="footer__bottom-links">
-          <a href="#footer">Privacy Policy</a>
-          <a href="#footer">Terms &amp; Conditions</a>
+         <div className="footer__bottom-links">
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-and-conditions">Terms &amp; Conditions</Link>
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import facultyBg from '../assets/images/seg.jpeg';
 import aboutBg from '../assets/images/about-bg.png';
 import institutionsBg from '../assets/images/seg.jpeg';
@@ -38,7 +38,8 @@ const deans = [
 ];
 
 export default function FacultyNewPage() {
-  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
 
   return (
     <div style={{ background: '#fcfdfe', minHeight: '100vh' }}>
@@ -165,7 +166,7 @@ export default function FacultyNewPage() {
                 <div className="fnp-card__tags">
                   {f.tags.map(t => <span className="fnp-card__tag" key={t}>{t}</span>)}
                 </div>
-                <button className="fnp-card__btn">View Profile <ArrowRight /></button>
+                <button className="fnp-card__btn" onClick={() => navigate(`/faculty/${f.id}`)}>View Profile <ArrowRight /></button>
               </div>
             </article>
           ))}
@@ -188,7 +189,7 @@ export default function FacultyNewPage() {
               <h3 className="fnp-leader__name">{d.name}</h3>
               <div className="fnp-leader__accent" />
               <p className="fnp-leader__role">{d.role}</p>
-              <div className="fnp-leader__arrow"><ArrowRight /></div>
+              <div className="fnp-leader__arrow" onClick={() => navigate(`/faculty/${d.id}`)} style={{ cursor: 'pointer' }}><ArrowRight /></div>
             </article>
           ))}
         </div>

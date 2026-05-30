@@ -45,8 +45,10 @@ const GearIcon = () => (
 );
 
 const InfoIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 21V8.5L12 4L20 8.5V21" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="7" width="20" height="14" rx="3" stroke="currentColor" strokeWidth="1.8" />
+    <path d="M7 7V5C7 3.9 7.9 3 9 3H15C16.1 3 17 3.9 17 5V7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M8 12H16M8 16H13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
 

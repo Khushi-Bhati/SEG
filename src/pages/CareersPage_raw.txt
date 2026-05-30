@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+﻿import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './CareersPage.css';
 import careerHeroImg from '../assets/images/seg.jpeg';
 import logoImg from '../assets/images/logo.png';
@@ -9,10 +9,10 @@ function JobModal({ job, onClose }) {
   return (
     <div className="job-modal-overlay" onClick={onClose}>
       <div className="job-modal" onClick={e => e.stopPropagation()}>
-        <button className="job-modal__close" onClick={onClose}>✕</button>
+        <button className="job-modal__close" onClick={onClose}>âœ•</button>
         <div className="job-modal__header">
           <div className={`job-icon bg-${job.color}`} style={{ width: 56, height: 56, fontSize: 24, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            {job.category === 'teaching' ? '🎓' : job.category === 'technical' ? '💻' : '👤'}
+            {job.category === 'teaching' ? 'ðŸŽ“' : job.category === 'technical' ? 'ðŸ’»' : 'ðŸ‘¤'}
           </div>
           <div>
             <h2 className="job-modal__title">{job.title}</h2>
@@ -28,7 +28,7 @@ function JobModal({ job, onClose }) {
           ))}
         </div>
         <div className="job-modal__footer">
-          <button className={`btn-apply bg-${job.color}`} style={{ width: '100%', justifyContent: 'center' }}>Apply Now →</button>
+          <button className={`btn-apply bg-${job.color}`} style={{ width: '100%', justifyContent: 'center' }}>Apply Now â†’</button>
         </div>
       </div>
     </div>
@@ -36,11 +36,11 @@ function JobModal({ job, onClose }) {
 }
 
 const jobCategories = [
-  { id: 'all', label: 'All Openings', count: 12, icon: '💼' },
-  { id: 'teaching', label: 'Teaching', count: 6, icon: '🎓' },
-  { id: 'administration', label: 'Administration', count: 3, icon: '🏛️' },
-  { id: 'technical', label: 'Technical', count: 2, icon: '💻' },
-  { id: 'support', label: 'Support Staff', count: 1, icon: '🎧' },
+  { id: 'all', label: 'All Openings', count: 12, icon: 'ðŸ’¼' },
+  { id: 'teaching', label: 'Teaching', count: 6, icon: 'ðŸŽ“' },
+  { id: 'administration', label: 'Administration', count: 3, icon: 'ðŸ›ï¸' },
+  { id: 'technical', label: 'Technical', count: 2, icon: 'ðŸ’»' },
+  { id: 'support', label: 'Support Staff', count: 1, icon: 'ðŸŽ§' },
 ];
 
 const jobs = [
@@ -97,7 +97,6 @@ const jobs = [
 export default function CareersPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedJob, setSelectedJob] = useState(null);
-  const navigate = useNavigate();
 
   const filteredJobs = activeCategory === 'all'
     ? jobs
@@ -123,11 +122,11 @@ export default function CareersPage() {
           <div className="careers-hero__image-wrap">
             <img src={careerHeroImg} alt="Join SEG" className="careers-hero__image" />
             <div className="careers-hero__info-card">
-              <div className="info-card__icon">💡</div>
+              <div className="info-card__icon">ðŸ’¡</div>
               <div className="info-card__body">
                 <h4>Why Join SEG?</h4>
                 <p>Be part of an institution that values excellence, innovation and integrity.</p>
-                <a href="#" className="info-card__link">Watch Our Culture Video <span>▶</span></a>
+                <a href="#" className="info-card__link">Watch Our Culture Video <span>â–¶</span></a>
               </div>
             </div>
           </div>
@@ -165,7 +164,7 @@ export default function CareersPage() {
             <div key={job.id} className={`job-card border-${job.color}`}>
               <div className="job-card__main">
                 <div className={`job-icon bg-${job.color}`}>
-                  {job.category === 'teaching' ? '🎓' : job.category === 'technical' ? '💻' : '👤'}
+                  {job.category === 'teaching' ? 'ðŸŽ“' : job.category === 'technical' ? 'ðŸ’»' : 'ðŸ‘¤'}
                 </div>
                 <div className="job-info">
                   <div className="job-title-row">
@@ -198,7 +197,7 @@ export default function CareersPage() {
               </div>
               <div className="job-actions">
                 <button className="btn-details" onClick={() => setSelectedJob(job)}>View Details</button>
-                <button className={`btn-apply bg-${job.color || 'blue'}`} onClick={() => navigate('/careers/apply', { state: { jobTitle: job.title } })}>Apply Now <span>→</span></button>
+                <button className={`btn-apply bg-${job.color}`}>Apply Now <span>â†’</span></button>
               </div>
             </div>
           ))}
@@ -213,7 +212,7 @@ export default function CareersPage() {
             <p>We are always looking for passionate people. Send us your resume and we&apos;ll keep you in mind.</p>
           </div>
           <button className="btn-submit-resume">
-            <span className="icon">📄</span>
+            <span className="icon">ðŸ“„</span>
             Submit Your Resume
           </button>
           <div className="cta-visual">
@@ -221,8 +220,7 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-
-      <JobModal job={selectedJob} onClose={() => setSelectedJob(null)} />
     </div>
   );
 }
+
